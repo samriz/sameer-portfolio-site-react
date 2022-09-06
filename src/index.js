@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Menu from "./menu.js";
+import Footer from "./footer.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+class IndexIntro extends React.Component{
+  
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class Index extends React.Component
+{
+    render()
+    {
+        return (
+          <div>
+              <div className="allButFooter"><Menu/></div>
+              <Footer/>
+          </div>
+        );
+    }
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Index/>);

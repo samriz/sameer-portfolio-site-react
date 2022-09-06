@@ -20,7 +20,9 @@ class Menu extends MenuItem
           <nav>
             <div>
               {this.renderMenuItem("index.html", "sameer rizvi")}
+               | 
               {this.renderMenuItem("about.html", "about")}
+               | 
               {this.renderMenuItem("contact.html", "contact")}
             </div>
           </nav>
