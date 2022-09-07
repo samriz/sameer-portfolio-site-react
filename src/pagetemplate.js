@@ -17,11 +17,16 @@ class PageTemplate extends React.Component
     render()
     {
         return (
-          <div>
-              <div className="allButFooter"><Menu/></div>
-
-              <Footer/>
-          </div>
+            <div className="body">
+                <div className="allButFooter">
+                    <Menu/>
+                    <Intro/>
+                    <div className="contentsdiv">
+                        <p>Page Template</p>
+                    </div>
+                </div>                
+                <Footer/>
+            </div>
         );
     }
 }
