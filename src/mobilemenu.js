@@ -1,5 +1,3 @@
 import Menu from "./menu"
 
-class MobileMenu extends Menu {}
-
-export default MobileMenu;
+export default class MobileMenu extends Menu {}

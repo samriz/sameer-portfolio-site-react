@@ -3,7 +3,7 @@ import MenuItem from "./menuitem"
 //import ReactDOM from "react-dom/client";
 
 
-class Menu extends MenuItem
+export default class Menu extends MenuItem
 {
     renderMenuItem(href, val)
     {
@@ -29,5 +29,3 @@ class Menu extends MenuItem
         );
     }
 }
-
-export default Menu;
