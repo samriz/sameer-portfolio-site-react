@@ -6,7 +6,7 @@ class Intro extends React.Component
 {
     render()
     {
-        return (<main className="intro">{this.props.content}</main>);
+        return (<main className="intro jumbotron">{this.props.content}</main>);
     }
 }
 
@@ -18,8 +18,8 @@ class PageTemplate extends React.Component
           <>
             <div className="allButFooter">
               <Menu />
-              <Intro content={<h1>Sameer Rizvi</h1>} />
-              <div className="contentsdiv"></div>
+              <Intro content={this.props.intro_content} />
+              <div className="contentsdiv">{this.props.main_content}</div>
             </div>
             <Footer />
           </>

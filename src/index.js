@@ -5,4 +5,10 @@ import './index.css';
 import PageTemplate from './pagetemplate';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<PageTemplate/>);
+root.render(<PageTemplate 
+    intro_content={<h1>Sameer Rizvi</h1>}
+    main_content={<>
+            <p>Welcome to my official Web Portfolio.</p>
+            <p>Here, you'll find information pertaining to my academic and professional experiences. This includes, but is not limited to, the following:</p>
+        </>}
+    />);
