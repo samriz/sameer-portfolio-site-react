@@ -11,7 +11,7 @@ class Footer extends React.Component
               <a
                 href="https://www.linkedin.com/in/sameer-rizvi-bb788375"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 title="LinkedIn"
               >
                 <svg
@@ -28,7 +28,7 @@ class Footer extends React.Component
               <a
                 href="https://github.com/samriz"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 title="GitHub"
               >
                 <svg
