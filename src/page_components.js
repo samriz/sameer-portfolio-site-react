@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from "./menu.js";
+import Menu from "./nav_components/menu.js";
 import Footer from "./footer.js";
 
 class Intro extends React.Component
