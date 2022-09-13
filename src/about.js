@@ -14,8 +14,8 @@ const AboutPage = () => {
         <h1>About</h1>
             <p>
                 <figure>
-                    <img src="./images/LinkedInPicture1.png" id="profilepic" class="center" alt="Sameer Rizvi"/>
-                    <figcaption><a href = "./contact.html" class="textlink" title="Contact">Contact Me</a></figcaption>
+                    <img src="./images/LinkedInPicture1.png" id="profilepic" className="center" alt="Sameer Rizvi"/>
+                    <figcaption><a href = "./contact.html" className="textlink" title="Contact">Contact Me</a></figcaption>
                 </figure>
             </p>
         </>
@@ -142,11 +142,11 @@ const AboutPage = () => {
                         <tr>
                             <td>
                                 <ul>
-                                    <li class="floatinglist">C#</li>
-                                    <li class="floatinglist">Visual Basic</li>
-                                    <li class="floatinglist">HTML</li>
-                                    <li class="floatinglist">CSS</li>
-                                    <li class="floatinglist">JavaScript</li>
+                                    <li className="floatinglist">C#</li>
+                                    <li className="floatinglist">Visual Basic</li>
+                                    <li className="floatinglist">HTML</li>
+                                    <li className="floatinglist">CSS</li>
+                                    <li className="floatinglist">JavaScript</li>
                                 </ul>
                             </td>
                         </tr>
@@ -159,15 +159,15 @@ const AboutPage = () => {
                         <tr>
                             <td>
                                 <ul>
-                                    <li class="floatinglist">ASP.NET
+                                    <li className="floatinglist">ASP.NET
                                         <ul>
                                             <li>MVC</li>
                                             <li>Web Forms</li>
                                         </ul>
                                     </li>
-                                    <li class="floatinglist">jQuery</li>
-                                    <li class="floatinglist">AngularJS</li>
-                                    <li class="floatinglist">nodeJS
+                                    <li className="floatinglist">jQuery</li>
+                                    <li className="floatinglist">AngularJS</li>
+                                    <li className="floatinglist">nodeJS
                                         <ul>
                                             <li>Express</li>
                                         </ul>
@@ -184,9 +184,9 @@ const AboutPage = () => {
                         <tr>
                             <td>
                                 <ul>
-                                    <li class="floatinglist">SQL Server</li>
-                                    <li class="floatinglist">MySQL</li>
-                                    <li class="floatinglist">MongoDB</li>
+                                    <li className="floatinglist">SQL Server</li>
+                                    <li className="floatinglist">MySQL</li>
+                                    <li className="floatinglist">MongoDB</li>
                                 </ul>
                             </td>
                         </tr>
@@ -199,17 +199,17 @@ const AboutPage = () => {
                         <tr>
                             <td>
                                 <ul>
-                                    <li class="floatinglist">Visual Studio</li>
-                                    <li class="floatinglist">Visual Studio Code</li>
-                                    <li class="floatinglist">GitHub Desktop</li>
-                                    <li class="floatinglist">Internet Information Services (IIS) Manager</li>
-                                    <li class="floatinglist">SQL Server Management Studio</li>
-                                    <li class="floatinglist">MySQL Workbench</li>
-                                    <li class="floatinglist">MongoDB Compass</li>
-                                    <li class="floatinglist">Notepad++</li>
-                                    <li class="floatinglist">BeyondCompare</li>
-                                    <li class="floatinglist">FileZilla</li>
-                                    <li class="floatinglist">Event Viewer</li>
+                                    <li className="floatinglist">Visual Studio</li>
+                                    <li className="floatinglist">Visual Studio Code</li>
+                                    <li className="floatinglist">GitHub Desktop</li>
+                                    <li className="floatinglist">Internet Information Services (IIS) Manager</li>
+                                    <li className="floatinglist">SQL Server Management Studio</li>
+                                    <li className="floatinglist">MySQL Workbench</li>
+                                    <li className="floatinglist">MongoDB Compass</li>
+                                    <li className="floatinglist">Notepad++</li>
+                                    <li className="floatinglist">BeyondCompare</li>
+                                    <li className="floatinglist">FileZilla</li>
+                                    <li className="floatinglist">Event Viewer</li>
                                 </ul>
                             </td>
                         </tr>
