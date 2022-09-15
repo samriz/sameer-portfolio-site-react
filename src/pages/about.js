@@ -1,11 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import './index.css';
-import PageTemplate from './page_components';
-
-/*const root = ReactDOM.createRoot(document.getElementById("rootAbout"));
-root.render();*/
+import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+import "../styles/index.css";
+import PageTemplate from "../page_components";
 
 const AboutPage = () => {
         return (<PageTemplate 
@@ -15,7 +11,7 @@ const AboutPage = () => {
             <p>
                 <figure>
                     <img src="./images/LinkedInPicture1.png" id="profilepic" className="center" alt="Sameer Rizvi"/>
-                    <figcaption><a href = "./contact.html" className="textlink" title="Contact">Contact Me</a></figcaption>
+                    <figcaption><a href="./contact" className="textlink" title="Contact">Contact Me</a></figcaption>
                 </figure>
             </p>
         </>
@@ -24,7 +20,7 @@ const AboutPage = () => {
         <>
             <details>
                 <summary>Education</summary>
-                <table id="educationtable" cellspacing="5" cellpadding="5" width="90%" border="0">
+                <table id="educationtable" cellSpacing="5" cellPadding="5" width="90%" border="0">
                 <tbody>
                     <tr valign="TOP">
                         <td>2021</td> 
@@ -50,7 +46,7 @@ const AboutPage = () => {
 
             <details>
                 <summary>Professional Experience</summary>
-                <table id="employmenttable" cellspacing="5" cellpadding="5" width="90%" border="0">
+                <table id="employmenttable" cellSpacing="5" cellPadding="5" width="90%" border="0">
                 <tbody>
                     <tr valign="TOP">
                         <td>2021-2022</td> 
@@ -132,7 +128,7 @@ const AboutPage = () => {
 
             <details>
                 <summary>Skills</summary>
-                <table id="skillstable" cellspacing="5" cellpadding="5" width="90%" border="0">
+                <table id="skillstable" cellSpacing="5" cellPadding="5" width="90%" border="0">
                     <tbody>
                         <thead>
                             <tr>
@@ -297,7 +293,4 @@ const AboutPage = () => {
     />)
 };
 
-//export default AboutPage;
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(AboutPage());
+export default AboutPage;
