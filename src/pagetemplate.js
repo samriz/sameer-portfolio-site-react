@@ -2,16 +2,18 @@ import React from 'react';
 import Menu from "./nav_components/menu.js";
 import Footer from "./footer.js";
 
-class Intro extends React.Component
+export class Intro extends React.Component
 {
+    //constructor(props){super(props);}
     render()
     {
         return (<main className="intro jumbotron">{this.props.content}</main>);
     }
 }
 
-class PageTemplate extends React.Component
+export default class PageTemplate extends React.Component
 {
+    //constructor(props){super(props);}
     render()
     {
         return (
@@ -26,5 +28,3 @@ class PageTemplate extends React.Component
         );
     }
 }
-
-export default PageTemplate;
