@@ -4,24 +4,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
+import "./styles/index.css";
 
 export default class App extends React.Component
 {
-    //constructor(props){super(props);}
     render()
     {
       //use react router to route to pages based on URL
-        return (
-          <BrowserRouter>
+        return (<BrowserRouter>
             <Routes>
-              <Route index element={<HomePage />} />
-              <Route path="about" element={<AboutPage />} />
-              <Route path="contact" element={<ContactPage />} />        
+              <Route index element={<HomePage/>}/>
+              <Route path="about" element={<AboutPage/>}/>
+              <Route path="contact" element={<ContactPage/>}/>        
             </Routes>
-          </BrowserRouter>
-        );
+          </BrowserRouter>);
     }
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(<App/>);

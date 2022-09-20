@@ -1,28 +1,45 @@
 import React from 'react';
-import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
-//import { useState } from 'react';
 
 export class FormInput extends React.Component
 {
-    //constructor(props){super(props);}
     render()
     {
-        return (<input type={this.props.type} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minlength} maxLength={this.props.maxlength} onInput={this.props.oninput}/>);
+        return (<input type={this.props.type} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minLength} maxLength={this.props.maxLength} onInput={this.props.onInput}/>);
     }
 }
 
 export class FormTextArea extends React.Component
 {
-    //constructor(props){super(props);}
     render()
     {
-        return (<textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minlength} maxLength={this.props.maxlength} onInput={this.props.oninput}></textarea>);
+        return (<textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength} onInput={this.props.onInput}>
+        </textarea>);
     }
 }
 
 export default class ContactForm extends React.Component
-{
-    //constructor(props){super(props);}
+{  
+    render()
+    {
+        return (<form id="contactForm" action="">
+            <table id="contacttable">
+                <tbody>
+                <tr>
+                    <td>
+                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} onInput={this.nameOnInput}/>
+                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput}/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} onInput={this.messageOnInput}/>
+                    </td>
+                </tr>   
+                </tbody>             
+            </table>
+        </form>);
+    }
+
     nameOnInput = () => {
         if(this.value.length < 2 || this.value.length > 100) 
         {
@@ -34,7 +51,7 @@ export default class ContactForm extends React.Component
             this.style.borderColor = 'green';
             this.style.borderWidth = '2px';
         }
-    }
+    };
 
     emailOnInput = () => {
         let validEmail = false;
@@ -68,16 +85,5 @@ export default class ContactForm extends React.Component
             this.style.borderColor = 'green';
             this.style.borderWidth = '2px';
         }
-    }
-
-    render()
-    {
-        return (
-        <>
-            <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} onInput={this.nameOnInput}/>
-            <FormInput  type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput}/>
-            <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={""} rows={5} cols={50} minLength={2} maxLength={1000} onInput={this.messageOnInput}/>
-        </> 
-        );
-    }
+    };
 }

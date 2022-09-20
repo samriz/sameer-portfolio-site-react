@@ -1,15 +1,12 @@
 import React from 'react';
-import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-import "../styles/index.css";
 import PageTemplate from "../pagetemplate";
 
 export default class AboutPage extends React.Component
 {
-    //constructor(props){super(props);}
     render()
     {
-            return (<PageTemplate 
-            intro_content={
+        return (<PageTemplate 
+        intro_content={
             <>
             <h1>About</h1>
                 <p>
@@ -19,8 +16,8 @@ export default class AboutPage extends React.Component
                     </figure>
                 </p>
             </>
-            }
-            main_content={
+        }
+        main_content={
             <>
                 <details>
                     <summary>Education</summary>
@@ -133,7 +130,7 @@ export default class AboutPage extends React.Component
                 <details>
                     <summary>Skills</summary>
                     <table id="skillstable" cellSpacing="5" cellPadding="5" width="90%" border="0">
-                        <tbody>
+                        {/* <tbody> */}
                             <thead>
                                 <tr>
                                     <th>Languages</th>
@@ -213,14 +210,14 @@ export default class AboutPage extends React.Component
                                     </ul>
                                 </td>
                             </tr>
-                        </tbody>
+                        {/* </tbody> */}
                     </table>
                 </details>
 
                 <details>
                     <summary id="summaryWorkSamples">Links To My Professional Work</summary>
                         <table>
-                            <tbody>
+                            {/* <tbody> */}
                             <thead>
                                 <tr>
                                     <th>Xpanxion</th>
@@ -289,11 +286,11 @@ export default class AboutPage extends React.Component
                                 </ul>
                                 </td>
                             </tr>
-                            </tbody>
+                            {/* </tbody> */}
                         </table>      
                 </details>
             </>
-            }
+        }
         />);
     }
 }
