@@ -23,13 +23,6 @@ export class FormTextArea extends React.Component
 
 export default class ContactForm extends React.Component
 {  
-    constructor()
-    {
-        super();
-        this.nameOnInput = this.nameOnInput.bind(this);
-        this.emailOnInput = this.emailOnInput.bind(this);
-        this.messageOnInput = this.messageOnInput.bind(this);
-    }
     render()
     {
         return (<form id="contactForm" action="">
@@ -56,13 +49,10 @@ export default class ContactForm extends React.Component
         </form>);
     }
 
-    /**
-     * @param{Event} e
-    */
-    nameOnInput = (e) => {
-        e.preventDefault();
-        console.log(`this.value: ${this.value}`);
-        /*let contactName = document.getElementById("contactName");
+    nameOnInput = () => {
+        //console.log(`this.value: ${this.value}`);
+        let contactName = document.getElementById("contactName");
+        //console.log(`name: ${contactName.value}`);
         if(contactName.value.length < 2 || contactName.value.length > 100) 
         {
             contactName.style.borderColor = 'red'; 
@@ -72,42 +62,44 @@ export default class ContactForm extends React.Component
         {
             contactName.style.borderColor = 'green';
             contactName.style.borderWidth = '2px';
-        }*/
-    };
+        }
+    }
 
-    emailOnInput = () => {
-        console.log(`this: ${this.value}.`);
-        /* let validEmail = false;
+    emailOnInput()
+    {
+        let contactEmail = document.getElementById("contactEmail");
+        let validEmail = false;
         let indexOfAt = 0;
         let indexOfDot = 0;
 
-        if(this.value.includes('@')) indexOfAt = this.value.search('@');
-        if(this.value.includes('.')) indexOfDot = this.value.indexOf('.');
+        if(contactEmail.value.includes('@')) indexOfAt = contactEmail.value.search('@');
+        if(contactEmail.value.includes('.')) indexOfDot = contactEmail.value.indexOf('.');
         if(indexOfDot > indexOfAt + 1) validEmail = true;
         if(validEmail)
         {
-            document.getElementById("contactEmail").style.borderColor = "green";
-            document.getElementById("contactEmail").style.borderWidth = "2px";
+            contactEmail.style.borderColor = "green";
+            contactEmail.style.borderWidth = "2px";
         }
         else
         {
-            document.getElementById("contactEmail").style.borderColor = "red";
-            document.getElementById("contactEmail").style.borderWidth = "2px";
+            contactEmail.style.borderColor = "red";
+            contactEmail.style.borderWidth = "2px";
         }
-        return validEmail; */
-    };
+        return validEmail;
+    }
 
-    messageOnInput = () => {
-        console.log(`this: ${this.value}.`);
-        /* if(this.value.length < 2 || this.value.length > 1000) 
+    messageOnInput() 
+    {
+        let contactMessage = document.getElementById("contactMessage");
+        if(contactMessage.value.length < 2 || contactMessage.value.length > 1000) 
         {
-            this.style.borderColor = 'red'; 
-            this.style.borderWidth = '2px';
+            contactMessage.style.borderColor = 'red'; 
+            contactMessage.style.borderWidth = '2px';
         } 
         else 
         {
-            this.style.borderColor = 'green';
-            this.style.borderWidth = '2px';
-        } */
-    };
+            contactMessage.style.borderColor = 'green';
+            contactMessage.style.borderWidth = '2px';
+        }
+    }
 }
