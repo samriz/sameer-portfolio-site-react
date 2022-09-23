@@ -1,7 +1,4 @@
-a:link,a:hover,a:visited,a:active
-{ 
-    text-decoration: none;
-}
+a:link,a:hover,a:visited,a:active{text-decoration: none;}
 
 footer
 {
@@ -16,10 +13,7 @@ img
     text-align: center;
 }
 
-body
-{
-    font-family: Arial, Helvetica, sans-serif;
-}
+body{font-family: Arial, Helvetica, sans-serif;}
 
 /*id selector styles*/
 
@@ -71,15 +65,9 @@ body
     margin: 0 20px;
 }
 
-.errortext
-{
-    color: red;
-}
+.errortext{color: red;}
 
-.intro
-{
-    text-align: center;
-}
+.intro{text-align: center;}
 
 .menu
 {
@@ -89,20 +77,11 @@ body
     border-style: outset;
 }
 
-.menuitem
-{
-    font-size: 20px;
-}
+.menuitem{font-size: 20px;}
 
-.docked
-{
-    position: fixed;
-}
+.docked{position: fixed;}
 
-.hidden 
-{
-    display: none;
-}
+.hidden{display: none;}
 
 .allButFooter 
 {
@@ -110,15 +89,9 @@ body
     min-height: calc(100vh - 95px);
 }
 
-.bi-linkedin
-{
-    color: #0a66c2;
-}
+.bi-linkedin{color: #0a66c2;}
 
-.bi-github
-{
-    color: purple
-}
+.bi-github{color: purple;}
 
 .hamburgerListItem
 {
@@ -126,18 +99,12 @@ body
     border-bottom: 1px solid; 
 }
 
-.leftPad
-{
-    padding-left: 5px;
-}
+.leftPad{padding-left: 5px;}
 
 .body
 {
     display: block;
-    margin: 8px
+    margin: 8px;
 }
 
-.body:-webkit-full-page-media 
-{
-    background-color: rgb(0, 0, 0)
-}
+.body:-webkit-full-page-media{background-color: rgb(0, 0, 0);}
