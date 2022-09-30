@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
-import ContactPage from "./pages/contact";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+//import ContactPage from "./pages/contact";
 import "./styles/index.css";
+//import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 export default class App extends React.Component
 {
@@ -16,7 +16,7 @@ export default class App extends React.Component
             <Routes>
               <Route index element={<HomePage/>}/>
               <Route path="about" element={<AboutPage/>}/>
-              <Route path="contact" element={<ContactPage/>}/>        
+              {/* <Route path="contact" element={<ContactPage/>}/>         */}
             </Routes>
           </BrowserRouter>);
     }

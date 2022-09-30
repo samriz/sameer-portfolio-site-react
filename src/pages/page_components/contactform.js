@@ -1,4 +1,5 @@
 import React from 'react';
+//import $ from "jquery";
 
 export class FormInput extends React.Component
 {
@@ -25,18 +26,19 @@ export default class ContactForm extends React.Component
 {  
     render()
     {
-        return (<form id="contactForm" action="">
+        return (
+        <form id="contactForm" action="">
             <table id="contacttable">
                 <tbody>
                 <tr>
                     <td>
-                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} onInput={this.nameOnInput}/>
-                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput}/>
+                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} onInput={this.nameOnInput} onFocus={this.getBorderColor} required/>
+                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput} required/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} onInput={this.messageOnInput}/>
+                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} onInput={this.messageOnInput} required/>
                     </td>
                 </tr>
                 <tr>
@@ -49,10 +51,14 @@ export default class ContactForm extends React.Component
         </form>);
     }
 
+    getBorderColor = () => {
+        let contactName  = getComputedStyle(document.getElementById("contactName"));
+        console.log(contactName.borderColor);        
+    }
+
     nameOnInput = () => {
-        //console.log(`this.value: ${this.value}`);
+        console.log(`this.value: ${this.value}`);
         let contactName = document.getElementById("contactName");
-        //console.log(`name: ${contactName.value}`);
         if(contactName.value.length < 2 || contactName.value.length > 100) 
         {
             contactName.style.borderColor = 'red'; 
@@ -102,4 +108,74 @@ export default class ContactForm extends React.Component
             contactMessage.style.borderWidth = '2px';
         }
     }
+
+    /* componentDidMount()
+    {
+        var form = document.getElementById("contactForm");
+        form.onsubmit = this.formSubmit;
+    }
+
+    async formSubmit(e) 
+    {
+        e.preventDefault();
+        let name = document.getElementById("contactName");
+        let email = document.getElementById("contactEmail").value;
+        let message = document.getElementById("contactMessage");
+
+        if(this.isValid(name, 100) && this.isValidEmail(email) && this.isValid(message, 1000))
+        {
+            const formData = new FormData(document.getElementById("contactForm"));
+
+            const response = await fetch("https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f",
+            {
+                method: "POST",
+                body: formData,
+            });
+
+            if(response.ok)
+            {
+                $("#divForm").hide();
+                $("#submitSuccess").show();
+            }
+        }
+    }
+
+    isValid(elem, maxLength)
+    {
+        let validName = false;
+        if(elem.value.length < 2 || elem.value.length > maxLength) 
+        {
+            elem.style.borderColor = 'red'; 
+            elem.style.borderWidth = '2px';
+        } 
+        else 
+        {
+            elem.style.borderColor = 'green'; 
+            elem.style.borderWidth = '2px';
+            validName = true;
+        }
+        return validName;
+    }
+
+    isValidEmail(email)
+    {            
+        let validEmail = false;
+        let indexOfAt = 0;
+        let indexOfDot = 0;
+
+        if(email.includes('@')) indexOfAt = email.search('@');
+        if(email.includes('.')) indexOfDot = email.indexOf('.');
+        if(indexOfDot > indexOfAt + 1) validEmail = true;
+        if(validEmail)
+        {
+            document.getElementById("contactEmail").style.borderColor = "green";
+            document.getElementById("contactEmail").style.borderWidth = "2px";
+        }
+        else
+        {
+            document.getElementById("contactEmail").style.borderColor = "red";
+            document.getElementById("contactEmail").style.borderWidth = "2px";
+        }
+        return validEmail;
+    } */
 }

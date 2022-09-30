@@ -107,4 +107,8 @@ body{font-family: Arial, Helvetica, sans-serif;}
     margin: 8px;
 }
 
-.body:-webkit-full-page-media{background-color: rgb(0, 0, 0);}
+.form-control
+{
+    border-color: red;
+    border-width: 2px;
+}
