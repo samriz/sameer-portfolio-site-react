@@ -11,12 +11,10 @@ export default class App extends React.Component
 {
     render()
     {
-      //use react router to route to pages based on URL
         return (<BrowserRouter>
             <Routes>
               <Route index element={<HomePage/>}/>
               <Route path="about" element={<AboutPage/>}/>
-              {/* <Route path="contact" element={<ContactPage/>}/>         */}
             </Routes>
           </BrowserRouter>);
     }

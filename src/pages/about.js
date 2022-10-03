@@ -9,17 +9,18 @@ export default class AboutPage extends React.Component
         return (<PageTemplate 
         intro_content={
             <>
-            <h1>About</h1>
-                <p>
+            <h1 id={"aboutHeader"}>About</h1>
+                <>
                     <figure>
                         <img src={LinkedInPicture} id="profilepic" className="center" alt="Sameer Rizvi"/>
                         <figcaption>
                             {/* <a href="./contact" className="textlink" title="Contact">Contact Me</a> */}
                             <a href={"mailto:rizvisameer999@gmail.com"} target={"_blank"}>rizvisameer999@gmail.com</a>
-                            <a href={"www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn</a>
+                            <br></br>
+                            <a href={"https://www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn</a>
                         </figcaption>
                     </figure>
-                </p>
+                </>
             </>
         }
         main_content={
@@ -135,7 +136,7 @@ export default class AboutPage extends React.Component
                 <details>
                     <summary>Skills</summary>
                     <table id="skillstable" cellSpacing="5" cellPadding="5" width="90%" border="0">
-                        {/* <tbody> */}
+                        <tbody>
                             <thead>
                                 <tr>
                                     <th>Languages</th>
@@ -215,19 +216,19 @@ export default class AboutPage extends React.Component
                                     </ul>
                                 </td>
                             </tr>
-                        {/* </tbody> */}
+                        </tbody>
                     </table>
                 </details>
 
-                <details>
-                    <summary id="summaryWorkSamples">Links To My Professional Work</summary>
-                        <table>
-                            {/* <tbody> */}
+                <details id={"samples"}>
+                    <summary id={"summaryProfessionalSamples"}>Links To My Professional Work</summary>
+                        <table>                            
                             <thead>
                                 <tr>
                                     <th>Xpanxion</th>
                                 </tr>
                             </thead>
+                            <tbody>
                             <tr>
                                 <td>
                                 <ul>
@@ -291,7 +292,7 @@ export default class AboutPage extends React.Component
                                 </ul>
                                 </td>
                             </tr>
-                            {/* </tbody> */}
+                            </tbody>
                         </table>      
                 </details>
             </div>
