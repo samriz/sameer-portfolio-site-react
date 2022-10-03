@@ -1,5 +1,6 @@
 import React from 'react';
 import PageTemplate from "../pagetemplate";
+import LinkedInPicture from "../images/LinkedInPicture1.png"
 
 export default class AboutPage extends React.Component
 {
@@ -11,14 +12,18 @@ export default class AboutPage extends React.Component
             <h1>About</h1>
                 <p>
                     <figure>
-                        <img src="./images/LinkedInPicture1.png" id="profilepic" className="center" alt="Sameer Rizvi"/>
-                        <figcaption><a href="./contact" className="textlink" title="Contact">Contact Me</a></figcaption>
+                        <img src={LinkedInPicture} id="profilepic" className="center" alt="Sameer Rizvi"/>
+                        <figcaption>
+                            {/* <a href="./contact" className="textlink" title="Contact">Contact Me</a> */}
+                            <a href={"mailto:rizvisameer999@gmail.com"} target={"_blank"}>rizvisameer999@gmail.com</a>
+                            <a href={"www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn</a>
+                        </figcaption>
                     </figure>
                 </p>
             </>
         }
         main_content={
-            <>
+            <div className={"contentsdiv leftPad"} id={"divAboutDetails"}>
                 <details>
                     <summary>Education</summary>
                     <table id="educationtable" cellSpacing="5" cellPadding="5" width="90%" border="0">
@@ -289,7 +294,7 @@ export default class AboutPage extends React.Component
                             {/* </tbody> */}
                         </table>      
                 </details>
-            </>
+            </div>
         }
         />);
     }

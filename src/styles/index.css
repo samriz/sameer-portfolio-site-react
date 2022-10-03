@@ -106,9 +106,3 @@ body{font-family: Arial, Helvetica, sans-serif;}
     display: block;
     margin: 8px;
 }
-
-.form-control
-{
-    border-color: red;
-    border-width: 2px;
-}

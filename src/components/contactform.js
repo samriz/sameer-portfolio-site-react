@@ -27,13 +27,18 @@ export default class ContactForm extends React.Component
     render()
     {
         return (
-        <form id="contactForm" action="">
+        <form id="contactForm" action="https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f">
             <table id="contacttable">
                 <tbody>
                 <tr>
+                    <td colSpan={2}>
+                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} onInput={this.nameOnInput} onFocus={this.getBorderColor} style={{textAlign: 'center'}} required/>
+                        {/* <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput()} required/> */}
+                    </td>
+                </tr>
+                <tr>
                     <td>
-                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} onInput={this.nameOnInput} onFocus={this.getBorderColor} required/>
-                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput} required/>
+                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput} style={{textAlign: 'center'}} required/>
                     </td>
                 </tr>
                 <tr>
@@ -109,7 +114,7 @@ export default class ContactForm extends React.Component
         }
     }
 
-    /* componentDidMount()
+    /*componentDidMount()
     {
         var form = document.getElementById("contactForm");
         form.onsubmit = this.formSubmit;
@@ -125,7 +130,6 @@ export default class ContactForm extends React.Component
         if(this.isValid(name, 100) && this.isValidEmail(email) && this.isValid(message, 1000))
         {
             const formData = new FormData(document.getElementById("contactForm"));
-
             const response = await fetch("https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f",
             {
                 method: "POST",
@@ -177,5 +181,5 @@ export default class ContactForm extends React.Component
             document.getElementById("contactEmail").style.borderWidth = "2px";
         }
         return validEmail;
-    } */
+    }*/
 }
