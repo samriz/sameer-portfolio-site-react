@@ -7,7 +7,7 @@ export class Intro extends React.Component
     render() 
     {
         return (
-            <main className="intro jumbotron sticky">{this.props.content}</main>
+            <main className="intro jumbotron">{this.props.content}</main>
         );
     }
 }

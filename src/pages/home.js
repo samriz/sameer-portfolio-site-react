@@ -7,6 +7,7 @@ import Footer from "../footer";
 import AboutPage from "./about";
 import ContactPage from "./contact";
 import { ExternalUrlArrow } from '../components/icons';
+import Menu from "../components/menu";
 //import SiteHeader from "../components/header";
 
 export default class HomePage extends React.Component
@@ -16,8 +17,9 @@ export default class HomePage extends React.Component
         return (
             <>
                 {/* <SiteHeader/> */}
+                <Menu/>
                 <PageTemplate 
-                    intro_content={<h1>Sameer Rizvi</h1>}
+                    intro_content={<h1 id={"homeHeader"}>Sameer Rizvi</h1>}
                     main_content={this.homePageBody()}
                 />
                 <AboutPage/>

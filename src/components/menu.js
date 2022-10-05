@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export class MenuItem extends React.Component
 {
     render()
     {
-        //return (<a href={this.props.href}>{this.props.text}</a>);
-        return (<Link to={this.props.href}>{this.props.text}</Link>);
+        return (<HashLink to={this.props.href}>{this.props.text}</HashLink>);
     }
 }
 
@@ -17,13 +16,13 @@ export default class Menu extends MenuItem
     render()
     {
         return (
-          <nav className="menu docked">
+          <nav className="menu sticky">
             <div id="divMenuItems">
-              {this.renderMenuItem("/", "sameer")}
+              {this.renderMenuItem("/#homeHeader", "sameer")}
                | 
-              {this.renderMenuItem("/about", "about")}
-               {/* | 
-              {this.renderMenuItem("/contact", "contact")} */}
+              {this.renderMenuItem("/#aboutHeader", "about")}
+               | 
+              {this.renderMenuItem("/#contactHeader", "contact")}
             </div>
           </nav>
         );

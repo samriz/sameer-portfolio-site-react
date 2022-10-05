@@ -18,7 +18,7 @@ export default class AboutPage extends React.Component
                     <figure>
                         <img src={LinkedInPicture} id="profilepic" className="center" alt="Sameer Rizvi"/>
                         <figcaption>
-                            <HashLink to="/#contact" className="textlink" title="Contact">Contact Me</HashLink>
+                            <HashLink to="/#contactHeader" className="textlink" title="Contact">Contact Me</HashLink>
                             {/* <a href={"mailto:rizvisameer999@gmail.com"} target={"_blank"}>rizvisameer999@gmail.com</a> */}
                             <br></br>
                             <a href={"https://www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn <ExternalUrlArrow/></a>
