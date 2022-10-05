@@ -5,7 +5,9 @@ import { HashLink } from 'react-router-hash-link';
 import Resume from "../misc/SameerRizviResume.pdf";
 import Footer from "../footer";
 import AboutPage from "./about";
-import SiteHeader from "../components/header";
+import ContactPage from "./contact";
+import { ExternalUrlArrow } from '../components/icons';
+//import SiteHeader from "../components/header";
 
 export default class HomePage extends React.Component
 {
@@ -13,12 +15,13 @@ export default class HomePage extends React.Component
     {
         return (
             <>
-                <SiteHeader/>
+                {/* <SiteHeader/> */}
                 <PageTemplate 
                     intro_content={<h1>Sameer Rizvi</h1>}
                     main_content={this.homePageBody()}
                 />
                 <AboutPage/>
+                <ContactPage/>
                 <Footer/>
             </>
         );
@@ -31,15 +34,12 @@ export default class HomePage extends React.Component
             <p>Welcome to my official Web Portfolio.</p>
             <p>Here, you'll find information pertaining to my academic and professional experiences. This includes, but is not limited to, the following:</p>
             <ul>
-                <li>My <Link to={Resume} title={"Resume"} target={"_blank"} rel={"author"}>resume <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                </svg></Link>.</li>
+                <li>My <Link to={Resume} title={"Resume"} target={"_blank"} rel={"author"}>resume <ExternalUrlArrow/></Link>.</li>
                 <li>An 
                     <HashLink to={"/#aboutHeader"} title="About" rel="author"> about</HashLink> section, detailing my academic and professional history.
                 </li>
-                <li>My <a href={"https://github.com/samriz"} target={"_blank"} title={"GitHub"} rel={"noopener noreferrer"}>GitHub</a>.</li>
-                {/* <li>A way to <Link to={"/contact"} title={"Contact"} rel={"author"}>contact</Link> me.</li> */}
+                <li>My <a href={"https://github.com/samriz"} target={"_blank"} title={"GitHub"} rel={"noopener noreferrer"}>GitHub <ExternalUrlArrow/></a>.</li>
+                <li>A way to <HashLink to={"/#contactHeader"} title={"Contact"} rel={"author"}>contact</HashLink> me.</li>
                 <li>
                     <HashLink smooth to={"/#summaryProfessionalSamples"} onClick={this.openProfessionalSamples}>Links</HashLink> to some of my professional work.
                 </li>

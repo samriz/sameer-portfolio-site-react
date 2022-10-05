@@ -2,6 +2,9 @@ import React from 'react';
 import PageTemplate from "../pagetemplate";
 import LinkedInPicture from "../images/LinkedInPicture1.png";
 import Resume from "../misc/SameerRizviResume.pdf";
+import { DownloadButton } from '../components/buttons';
+import { ExternalUrlArrow } from '../components/icons';
+import { HashLink } from 'react-router-hash-link';
 
 export default class AboutPage extends React.Component
 {
@@ -15,10 +18,10 @@ export default class AboutPage extends React.Component
                     <figure>
                         <img src={LinkedInPicture} id="profilepic" className="center" alt="Sameer Rizvi"/>
                         <figcaption>
-                            {/* <a href="./contact" className="textlink" title="Contact">Contact Me</a> */}
-                            <a href={"mailto:rizvisameer999@gmail.com"} target={"_blank"}>rizvisameer999@gmail.com</a>
+                            <HashLink to="/#contact" className="textlink" title="Contact">Contact Me</HashLink>
+                            {/* <a href={"mailto:rizvisameer999@gmail.com"} target={"_blank"}>rizvisameer999@gmail.com</a> */}
                             <br></br>
-                            <a href={"https://www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn</a>
+                            <a href={"https://www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn <ExternalUrlArrow/></a>
                         </figcaption>
                     </figure>
                 </>
@@ -299,10 +302,12 @@ export default class AboutPage extends React.Component
                     </details>
                 </div>
                 <br></br>
-                <div>
-                    <button className={"leftPad"}><a href={Resume} download>DOWNLOAD RESUME</a></button>
-                </div>
-                
+                <div style={{textAlign: "center",}}>
+                    {/* <button className={"leftPad"}><a href={Resume} download>DOWNLOAD RESUME</a></button> */}
+                    <DownloadButton file={Resume} buttonText={"DOWNLOAD RESUME"}/>
+                    <br></br>
+                    <br></br>
+                </div>                
             </>
         }
         />);

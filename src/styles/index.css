@@ -17,6 +17,8 @@ body{font-family: Arial, Helvetica, sans-serif;}
 
 header{height: 110vh;}
 
+button{border-radius: 2em;}
+
 /*id selector styles*/
 
 /* #menuitem0

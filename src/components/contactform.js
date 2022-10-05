@@ -31,18 +31,18 @@ export default class ContactForm extends React.Component
             <table id="contacttable">
                 <tbody>
                 <tr>
-                    <td colSpan={2}>
+                    <td colSpan={"100%"}>
                         <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} onInput={this.nameOnInput} onFocus={this.getBorderColor} style={{textAlign: 'center'}} required/>
                         {/* <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput()} required/> */}
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colSpan={"100%"}>
                         <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} onInput={this.emailOnInput} style={{textAlign: 'center'}} required/>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colSpan={"100%"}>
                         <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} onInput={this.messageOnInput} required/>
                     </td>
                 </tr>
