@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 import Resume from "../misc/SameerRizviResume.pdf";
 import Footer from "../footer";
 import AboutPage from "./about";
-import ContactPage from "./contact";
+//import ContactPage from "./contact";
 import { ExternalUrlArrow } from '../components/icons';
 import Menu from "../components/menu";
 //import SiteHeader from "../components/header";
@@ -23,7 +23,7 @@ export default class HomePage extends React.Component
                     main_content={this.homePageBody()}
                 />
                 <AboutPage/>
-                <ContactPage/>
+                {/* <ContactPage/> */}
                 <Footer/>
             </>
         );
