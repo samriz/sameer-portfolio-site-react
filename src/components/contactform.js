@@ -27,7 +27,7 @@ export default class ContactForm extends React.Component
     render()
     {
         return (
-        <form id="contactForm" name="contact" method="POST" netlify>
+        <form name="contact" netlify>
             <table id="contacttable">
                 <tbody>
                 <tr>
