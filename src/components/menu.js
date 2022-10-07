@@ -18,11 +18,11 @@ export default class Menu extends MenuItem
         return (
           <nav className="menu sticky">
             <div id="divMenuItems">
-              {this.renderMenuItem("/#homeHeader", "sameer")}
+              {this.renderMenuItem("/#home", "sameer")}
                | 
-              {this.renderMenuItem("/#aboutHeader", "about")}
-               {/* | 
-              {this.renderMenuItem("/#contactHeader", "contact")} */}
+              {this.renderMenuItem("/#about", "about")}
+               | 
+              {this.renderMenuItem("/#contact", "contact")}
             </div>
           </nav>
         );

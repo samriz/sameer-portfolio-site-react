@@ -28,7 +28,7 @@ export default class ContactForm extends React.Component
     {
         return (
         <form name="contact" method="post">
-            <table id="contacttable" style={{margin: "0px",}}>
+            <table id="contacttable">
                 <tbody>
                 <tr>
                     <td>

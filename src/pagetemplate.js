@@ -7,7 +7,7 @@ export class Intro extends React.Component
     render() 
     {
         return (
-            <main className="intro jumbotron">{this.props.content}</main>
+            <main id={this.props.header_id} className="intro jumbotron">{this.props.content}</main>
         );
     }
 }
@@ -20,7 +20,7 @@ export default class PageTemplate extends React.Component
         <>
             <div className="allButFooter">
                 {/* <Menu/> */}
-                <Intro content={this.props.intro_content}/>
+                <Intro header_id={this.props.intro_id} content={this.props.intro_content}/>
                 <div className="contentsdiv">{this.props.main_content}</div>
             </div>
             {/* <Footer/> */}

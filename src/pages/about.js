@@ -10,10 +10,10 @@ export default class AboutPage extends React.Component
 {
     render()
     {
-        return (<PageTemplate 
+        return (<PageTemplate intro_id={"about"}
         intro_content={
             <>
-            <h1 id={"aboutHeader"}>About</h1>
+            <h1>About</h1>
                 <>
                     <figure>
                         <img src={LinkedInPicture} id="profilepic" className="center" alt="Sameer Rizvi"/>

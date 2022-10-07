@@ -1,10 +1,10 @@
 a:link,a:hover,a:visited,a:active{text-decoration: none;}
 
-footer
+/* footer
 {
     text-align: center;
     font-size: .75rem;
-}  
+} */  
 
 img
 {
@@ -106,9 +106,3 @@ button{border-radius: 2em;}
 }
 
 .leftPad{padding-left: 5px;}
-
-/* .body
-{
-    display: block;
-    margin: 8px;
-} */

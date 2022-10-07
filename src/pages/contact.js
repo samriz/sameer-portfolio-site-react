@@ -6,8 +6,8 @@ export default class ContactPage extends React.Component
 {
     render()
     {
-        return (<PageTemplate 
-            intro_content={<h1 id={"contactHeader"}>Contact Me</h1>}
+        return (<PageTemplate intro_id={"contact"}
+            intro_content={<h1>Contact Me</h1>}
             main_content={<ContactForm/>}
         />);
     }
