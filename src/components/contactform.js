@@ -27,9 +27,9 @@ export default class ContactForm extends React.Component
     render()
     {
         return (
-        <form name="contact" netlify>
-            <table id="contacttable" style={{margin: "0px", width: "fit-content",}}>
-                <tbody style={{paddingLeft: "30px",}}>
+        <form name="contact">
+            <table id="contacttable" style={{margin: "0px",}}>
+                <tbody>
                 <tr>
                     <td>
                         <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} required/>
