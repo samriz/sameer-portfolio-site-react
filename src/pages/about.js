@@ -19,7 +19,6 @@ export default class AboutPage extends React.Component
                         <img src={LinkedInPicture} id="profilepic" className="center" alt="Sameer Rizvi"/>
                         <figcaption>
                             <HashLink to="/#contact" className="textlink" title="Contact">Contact Me</HashLink>
-                            {/* <a href={"mailto:rizvisameer999@gmail.com"} target={"_blank"}>rizvisameer999@gmail.com</a> */}
                             <br></br>
                             <a href={"https://www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn <ExternalUrlArrow/></a>
                         </figcaption>
@@ -303,7 +302,6 @@ export default class AboutPage extends React.Component
                 </div>
                 <br></br>
                 <div style={{textAlign: "center",}}>
-                    {/* <button className={"leftPad"}><a href={Resume} download>DOWNLOAD RESUME</a></button> */}
                     <DownloadButton file={Resume} buttonText={"DOWNLOAD RESUME"}/>
                     <br></br>
                     <br></br>

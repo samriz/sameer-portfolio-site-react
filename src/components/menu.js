@@ -3,10 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 
 export class MenuItem extends React.Component
 {
-    render()
-    {
-        return (<HashLink to={this.props.href}>{this.props.text}</HashLink>);
-    }
+    render() {return (<HashLink to={this.props.href}>{this.props.text}</HashLink>);}
 }
 
 export default class Menu extends MenuItem

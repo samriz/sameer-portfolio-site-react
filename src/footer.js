@@ -1,5 +1,4 @@
 import React from "react";
-//import ContactForm from "./components/contactform";
 import SocialMediaBanner from "./components/socialmediabanner";
 
 export default class Footer extends React.Component
