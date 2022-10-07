@@ -238,7 +238,7 @@ export default class AboutPage extends React.Component
                                     <td>
                                     <ul>
                                         <li>
-                                            <a href="https://www.xpanxion.com/about/careers">Careers</a> page for xpanxion.
+                                            <a href="https://www.xpanxion.com/about/careers" target="_blank" rel="noopener noreferrer">Careers</a> page for xpanxion.
                                             <ul>
                                                 <li>
                                                     Clicking on any of the "+ View details" links should bring about a modal that contains an acknowledgment form for a prospective applicant to fill out before being redirected to a page containing the application for the job associated with the specific "+ View details" link you had clicked on.
@@ -260,7 +260,7 @@ export default class AboutPage extends React.Component
                                     <td>
                                     <ul>
                                         <li>
-                                            An order <a href="https://www.pdcm.com/hrconnect-legal-policy/">form</a> that allows a user to draw their signature on an HTML canvas. Particularly useful on mobile devices.
+                                            An order <a href="https://www.pdcm.com/hrconnect-legal-policy/" target="_blank" rel="noopener noreferrer">form</a> that allows a user to draw their signature on an HTML canvas. Particularly useful on mobile devices.
                                             <ul>
                                                 <li>
                                                     Signature drawing functionality created using "<a href="https://github.com/szimek/signature_pad" title="A JavaScript library for drawing smooth signatures." target="_blank" rel="noopener noreferrer">signature_pad</a>".
