@@ -21,8 +21,8 @@ export default class Menu extends MenuItem
               {this.renderMenuItem("/#homeHeader", "sameer")}
                | 
               {this.renderMenuItem("/#aboutHeader", "about")}
-               | 
-              {this.renderMenuItem("/#contactHeader", "contact")}
+               {/* | 
+              {this.renderMenuItem("/#contactHeader", "contact")} */}
             </div>
           </nav>
         );
