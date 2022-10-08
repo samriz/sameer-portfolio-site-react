@@ -27,7 +27,8 @@ export default class ContactForm extends React.Component
     render()
     {
         return (
-        <form name="contact" method="post">
+        // <form name="contact" method="post">
+        <form id={"contactForm"} onSubmit={this.handleSubmit}>
             <table id="contacttable">
                 <tbody>
                 <tr>
@@ -54,5 +55,72 @@ export default class ContactForm extends React.Component
             </table>
             <input type="hidden" name="form-name" value="contact"/>
         </form>);
+    }
+
+    handleSubmit = e => 
+    {
+        e.preventDefault();
+        let name = document.getElementById("contactName");
+        let email = document.getElementById("contactEmail").value;
+        let message = document.getElementById("contactMessage");
+
+        if(this.isValid(name, 100) && this.isValidEmail(email) && this.isValid(message, 1000))
+        {
+            const formData = new FormData(document.getElementById("contactForm"));
+
+            const response = fetch("/",
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: formData,
+            })
+
+            .then(() => alert("Success!"))
+            .catch(error => alert(error));
+
+            //if(response.ok) alert("Success!");
+            //else alert("Form could not be submitted.");
+        }
+    }
+    isValid(elem, maxLength)
+    {
+        let validName = false;
+        if(elem.value.length < 2 || elem.value.length > maxLength) 
+        {
+            elem.style.borderColor = 'red'; 
+            elem.style.borderWidth = '2px';
+        } 
+        else 
+        {
+            elem.style.borderColor = 'green'; 
+            elem.style.borderWidth = '2px';
+            validName = true;
+        }
+        return validName;
+    }
+
+    /**
+    * @param{string} email
+    */
+    isValidEmail(email)
+    {            
+        let validEmail = false;
+        let indexOfAt = 0;
+        let indexOfDot = 0;
+
+        if(email.includes('@')) indexOfAt = email.search('@');
+        if(email.includes('.')) indexOfDot = email.indexOf('.');
+        if(indexOfDot > indexOfAt + 1) validEmail = true;
+        if(validEmail)
+        {
+            document.getElementById("contactEmail").style.borderColor = "green";
+            document.getElementById("contactEmail").style.borderWidth = "2px";
+        }
+        else
+        {
+            document.getElementById("contactEmail").style.borderColor = "red";
+            document.getElementById("contactEmail").style.borderWidth = "2px";
+        }
+        return validEmail;
     }
 }

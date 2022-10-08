@@ -80,9 +80,10 @@ async function formSubmit(e)
     {
         const formData = new FormData(document.getElementById("contactForm"));
 
-        const response = await fetch("https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f",
+        const response = await fetch("/",
         {
             method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: formData,
         });
 
