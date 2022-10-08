@@ -68,7 +68,7 @@ export default class ContactForm extends React.Component
         {
             const formData = new FormData(document.getElementById("contactForm"));
 
-            const response = fetch("/",
+            fetch("/",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
