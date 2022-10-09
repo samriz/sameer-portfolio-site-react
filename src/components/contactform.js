@@ -1,5 +1,5 @@
 import React from 'react';
-//import $ from "jquery";
+import $ from "jquery";
 //import { useAsync } from "react-async";
 
 export class FormInput extends React.Component
@@ -49,7 +49,7 @@ export default class ContactForm extends React.Component
                 </tr>
                 <tr>
                     <td id="tdSend">
-                        <button type={"submit"} className={"btn btn-outline-secondary"}>Send</button>                            
+                        <button type={"button"} className={"btn btn-outline-secondary"} onClick={this.formSubmit}>Send</button>                            
                     </td>
                 </tr>
                 </tbody>             
@@ -61,30 +61,30 @@ export default class ContactForm extends React.Component
     /**
      * @param{Event} e
     */
-    formSubmit = (e) => 
+    formSubmit = () => 
     {
-        e.preventDefault();
-        //alert("submit clicked");
+        //e.preventDefault();
         let name = document.getElementById("contactName");
-        let email = document.getElementById("contactEmail").value;
+        let email = document.getElementById("contactEmail");
         let message = document.getElementById("contactMessage");
 
-        if(this.isValid(name, 100) && this.isValidEmail(email) && this.isValid(message, 1000))
+        if(this.isValid(name, 100) && this.isValidEmail(email.value) && this.isValid(message, 1000))
         {
-            const formData = new FormData(document.getElementById("contactForm"));
-
-            const response = fetch("/",
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: formData,
-            })
-
-            /*.then(() => alert("Success!"))
-            .catch(() => alert("Form could not be submitted."));*/
-            alert(response.text());
-            //if(response.ok) alert("Success!");
-            //else alert("Form could not be submitted.");
+            $.ajax({
+                type: "POST",
+                url: "/",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response)
+                {
+                    alert("Success!");
+                },
+                error: function (jqXHR, textStatus, errorThrown) 
+                { 
+                    console.log("Error- Status: " + textStatus + "<br />jqXHR Status: " + jqXHR.status + "<br />jqXHR Response Text:" + jqXHR.responseText);
+                    alert("Form could not be submitted.");
+                }
+            });
         }
     }
 
