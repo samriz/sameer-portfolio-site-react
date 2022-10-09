@@ -1,5 +1,6 @@
 import React from 'react';
 //import $ from "jquery";
+//import { useAsync } from "react-async";
 
 export class FormInput extends React.Component
 {
@@ -27,8 +28,8 @@ export default class ContactForm extends React.Component
     render()
     {
         return (
-        // <form name="contact" method="post">
-        <form id={"contactForm"} onSubmit={this.handleSubmit}>
+        <form id={"contactForm"} name="contact" method="post">
+        {/* <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}> */}
             <table id="contacttable">
                 <tbody>
                 <tr>
@@ -57,9 +58,13 @@ export default class ContactForm extends React.Component
         </form>);
     }
 
-    handleSubmit = e => 
+    /**
+     * @param{Event} e
+    */
+    formSubmit = (e) => 
     {
         e.preventDefault();
+        //alert("submit clicked");
         let name = document.getElementById("contactName");
         let email = document.getElementById("contactEmail").value;
         let message = document.getElementById("contactMessage");
@@ -68,21 +73,26 @@ export default class ContactForm extends React.Component
         {
             const formData = new FormData(document.getElementById("contactForm"));
 
-            fetch("/",
+            const response = fetch("/",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: formData,
             })
 
-            .then(() => alert("Success!"))
-            .catch(error => alert(error));
-
+            /*.then(() => alert("Success!"))
+            .catch(() => alert("Form could not be submitted."));*/
+            alert(response.text());
             //if(response.ok) alert("Success!");
             //else alert("Form could not be submitted.");
         }
     }
-    isValid(elem, maxLength)
+
+    /**
+    * @param{HTMLElement} elem
+    * @param{number} maxLength
+    */
+    isValid = (elem, maxLength) =>
     {
         let validName = false;
         if(elem.value.length < 2 || elem.value.length > maxLength) 
@@ -102,7 +112,7 @@ export default class ContactForm extends React.Component
     /**
     * @param{string} email
     */
-    isValidEmail(email)
+    isValidEmail = (email) =>
     {            
         let validEmail = false;
         let indexOfAt = 0;
