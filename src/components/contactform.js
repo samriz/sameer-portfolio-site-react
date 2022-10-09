@@ -30,7 +30,7 @@ export default class ContactForm extends React.Component
         return (
         <form id={"contactForm"} name="contact" method="post">
         {/* <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}> */}
-            <table id="contacttable">
+            <table id="contactTable">
                 <tbody>
                 <tr>
                     <td>

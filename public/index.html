@@ -15,9 +15,9 @@
   <body id="root">
     <!-- A little help for the Netlify post-processing bots -->
     <form id="contactForm" name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name"/>
-      <input type="email" name="email"/>
-      <textarea name="message"></textarea>
+      <input type="text" name="name" minLength="2" maxLength="100" required/>
+      <input type="email" name="email" minLength="2" maxLength="50" required/>
+      <textarea name="message" rows="5" cols="50" minLength="2" maxLength="1000" required></textarea>
     </form>
   </body>
 </html>
