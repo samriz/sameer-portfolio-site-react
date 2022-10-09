@@ -28,7 +28,7 @@ export default class ContactForm extends React.Component
     render()
     {
         return (
-        <form id={"contactForm"} name="contact">
+        <form id={"contactForm"} name="contact" method="post">
         {/* <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}> */}
             <table id="contacttable">
                 <tbody>
@@ -49,7 +49,8 @@ export default class ContactForm extends React.Component
                 </tr>
                 <tr>
                     <td id="tdSend">
-                        <button type={"button"} className={"btn btn-outline-secondary"} onClick={this.formSubmit}>Send</button>                            
+                        {/* <button type={"button"} className={"btn btn-outline-secondary"} onClick={this.formSubmit}>Send</button>*/}
+                        <button type={"submit"} className={"btn btn-outline-secondary"}>Send</button>
                     </td>
                 </tr>
                 </tbody>             
@@ -73,7 +74,10 @@ export default class ContactForm extends React.Component
             $.ajax({
                 type: "POST",
                 url: "/",
-                contentType: "application/json; charset=utf-8",
+                data: new FormData(document.getElementById("contactForm")),
+                processData: false,
+                contentType: false,
+                //contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 async: false,
                 success: function (response)
