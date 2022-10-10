@@ -81,9 +81,6 @@ export default class ContactForm extends React.Component
         {
             let form = document.getElementById("contactForm");
             let formData = new FormData(form);
-            /*formData.append(name.name, name.value);
-            formData.append(email.name, email.value);
-            formData.append(message.name, message.value);*/
 
             /* for (const value of formData.values()) 
             {
@@ -94,7 +91,14 @@ export default class ContactForm extends React.Component
                 method: "POST",
                 body: formData
             });
-            if(response.ok) alert("Message sent!");
+            if(response.ok) 
+            {
+                /* document.getElementById("contactName").value = "";
+                document.getElementById("contactEmail").value = "";
+                document.getElementById("contactMessage").value = ""; */
+                this.setState({name: "", email: "", message: ""});
+                alert("Message sent!");
+            }
             else alert("Message could not be sent.");           
         }
     }
