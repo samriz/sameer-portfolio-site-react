@@ -84,7 +84,8 @@ export default class ContactForm extends React.Component
                 method: "POST",
                 body: formData
             });
-            alert(response.statusText);            
+            if(response.ok) alert("Message sent!");
+            else alert("Message could not be sent.");            
         }
     }
 
