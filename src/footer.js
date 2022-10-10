@@ -16,4 +16,9 @@ export default class Footer extends React.Component
           </footer>
         );
     }
+
+    componentDidMount()
+    {
+      document.getElementById("fullyear").innerHTML = new Date().getFullYear();
+    }
 }
