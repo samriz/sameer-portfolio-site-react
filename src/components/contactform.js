@@ -39,20 +39,20 @@ export default class ContactForm extends React.Component
                 <tbody>
                 <tr>
                     <td colSpan={2}>
-                        {/* <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} required/> */}
-                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange} required/>
+                        {/* <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100}/> */}
+                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
                     </td>                                       
                 </tr>
                 <tr>
                     <td colSpan={2}>
-                        {/* <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} required/> */}
-                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange} required/>
+                        {/* <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50}/> */}
+                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>
                     </td> 
                 </tr>
                 <tr>
                     <td>
-                        {/* <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} required/> */}
-                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange} required/>
+                        {/* <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000}/> */}
+                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
                     </td>
                 </tr>
                 <tr>
@@ -65,6 +65,13 @@ export default class ContactForm extends React.Component
             </table>
             <input type="hidden" name="form-name" value="contact"/>
         </form>);
+    }
+
+    componentDidMount()
+    {
+        document.getElementById("contactName").required = true;
+        document.getElementById("contactEmail").required = true;
+        document.getElementById("contactMessage").required = true;
     }
 
     /**
@@ -93,10 +100,16 @@ export default class ContactForm extends React.Component
             });
             if(response.ok) 
             {
-                document.getElementById("contactName").value = "";
-                document.getElementById("contactEmail").value = "";
-                document.getElementById("contactMessage").value = "";
+                name.value = "";
+                email.value = "";
+                message.value = "";
                 this.setState({name: "", email: "", message: ""});
+                name.style.borderColor = "rgb(118, 118, 118)";
+                email.style.borderColor = "rgb(118, 118, 118)";
+                message.style.borderColor = "rgb(118, 118, 118)";
+                name.style.borderWidth = "1px";
+                email.style.borderWidth = "1px";
+                message.style.borderWidth = "1px";
                 alert("Message sent!");
             }
             else alert("Message could not be sent.");           
