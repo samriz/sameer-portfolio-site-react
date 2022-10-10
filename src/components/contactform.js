@@ -1,6 +1,5 @@
 import React from 'react';
-import $ from "jquery";
-//import { useAsync } from "react-async";
+//import $ from "jquery";
 
 export class FormInput extends React.Component
 {
@@ -17,34 +16,40 @@ export class FormTextArea extends React.Component
     render()
     {
         return (
-            <textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength}>
-            </textarea>
+            <textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
         );
     }
 }
 
 export default class ContactForm extends React.Component
 {  
+    constructor(props) 
+    {
+        super(props);
+        this.state = { name: "", email: "", message: "" };
+    }
+
     render()
     {
+        const { name, email, message } = this.state;
         return (
-        <form id={"contactForm"} name="contact" method="post">
-        {/* <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}> */}
+        // <form id={"contactForm"} name="contact" method="post">
+        <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}>
             <table id="contactTable">
                 <tbody>
                 <tr>
-                    <td>
-                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} required/>
+                    <td colSpan={2}>
+                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange} required/>
                     </td>                                       
                 </tr>
                 <tr>
-                    <td>
-                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} required/>
+                    <td colSpan={2}>
+                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange} required/>
                     </td> 
                 </tr>
                 <tr>
                     <td>
-                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} required/>
+                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange} required/>
                     </td>
                 </tr>
                 <tr>
@@ -62,34 +67,23 @@ export default class ContactForm extends React.Component
     /**
      * @param{Event} e
     */
-    formSubmit = () => 
+    formSubmit = e => 
     {
-        //e.preventDefault();
         let name = document.getElementById("contactName");
         let email = document.getElementById("contactEmail");
         let message = document.getElementById("contactMessage");
 
         if(this.isValid(name, 100) && this.isValidEmail(email.value) && this.isValid(message, 1000))
         {
-            $.ajax({
-                type: "POST",
-                url: "/",
-                data: new FormData(document.getElementById("contactForm")),
-                processData: false,
-                contentType: false,
-                //contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                async: false,
-                success: function (response)
-                {
-                    alert("Success!");
-                },
-                error: function (jqXHR, textStatus, errorThrown) 
-                { 
-                    console.log("Error- Status: " + textStatus + "<br />jqXHR Status: " + jqXHR.status + "<br />jqXHR Response Text:" + jqXHR.responseText);
-                    alert("Form could not be submitted.");
-                }
-            });
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: this.encode({ "form-name": "contact", ...this.state })
+            })
+            .then(() => {alert("Success!")})
+            .catch(error => alert(error));
+
+            e.preventDefault();
         }
     }
 
@@ -138,4 +132,11 @@ export default class ContactForm extends React.Component
         }
         return validEmail;
     }
+
+    encode = (data) => 
+    {
+        return Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
+    }
+
+    handleChange = e => this.setState({ [e.target.name]: e.target.value });
 }
