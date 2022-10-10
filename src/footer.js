@@ -11,7 +11,6 @@ export default class Footer extends React.Component
               <div>
                 <SocialMediaBanner/>
                 <p>Copyright &copy; <span id="fullyear"></span> Sameer Rizvi</p>
-                {/* <script>document.getElementById("fullyear").innerHTML = new Date().getFullYear();</script> */}
               </div>
           </footer>
         );
