@@ -23,33 +23,36 @@ export class FormTextArea extends React.Component
 
 export default class ContactForm extends React.Component
 {  
-    constructor(props) 
+    /* constructor(props) 
     {
         super(props);
         this.state = { name: "", email: "", message: "" };
-    }
+    } */
 
     render()
     {
-        const { name, email, message } = this.state;
+        //const { name, email, message } = this.state;
         return (
-        // <form id={"contactForm"} name="contact" method="post">
-        <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}>
+        <form id={"contactForm"} name="contact" method="post">
+        {/* <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}> */}
             <table id="contactTable">
                 <tbody>
                 <tr>
                     <td colSpan={2}>
-                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange} required/>
+                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} required/>
+                        {/* <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange} required/> */}
                     </td>                                       
                 </tr>
                 <tr>
                     <td colSpan={2}>
-                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange} required/>
+                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} required/>
+                        {/* <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange} required/> */}
                     </td> 
                 </tr>
                 <tr>
                     <td>
-                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange} required/>
+                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} required/>
+                        {/* <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange} required/> */}
                     </td>
                 </tr>
                 <tr>
