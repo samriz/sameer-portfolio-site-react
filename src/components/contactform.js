@@ -79,13 +79,22 @@ export default class ContactForm extends React.Component
 
         if(this.isValid(name, 100) && this.isValidEmail(email.value) && this.isValid(message, 1000))
         {
-            let formData = new FormData(document.getElementById("contactForm"));
+            let formData = new FormData();
+            formData.append(name.name, name.value);
+            formData.append(email.name, email.value);
+            formData.append(message.name, message.value);
+
+            /* for (const value of formData.values()) 
+            {
+                console.log(value);
+            } */
+            
             let response = await fetch("/", {
                 method: "POST",
                 body: formData
             });
             if(response.ok) alert("Message sent!");
-            else alert("Message could not be sent.");            
+            else alert("Message could not be sent.");           
         }
     }
 
