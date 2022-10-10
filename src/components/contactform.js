@@ -93,9 +93,9 @@ export default class ContactForm extends React.Component
             });
             if(response.ok) 
             {
-                /* document.getElementById("contactName").value = "";
+                document.getElementById("contactName").value = "";
                 document.getElementById("contactEmail").value = "";
-                document.getElementById("contactMessage").value = ""; */
+                document.getElementById("contactMessage").value = "";
                 this.setState({name: "", email: "", message: ""});
                 alert("Message sent!");
             }
