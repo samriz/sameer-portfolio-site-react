@@ -143,17 +143,17 @@ export default class AboutPage extends React.Component
                             <tbody>
                                 <thead>
                                     <tr>
-                                        <th>Languages</th>
+                                        <th>Programming and Scripting Languages</th>
                                     </tr>
                                 </thead>
                                 <tr>
                                     <td>
-                                        <ul>
-                                            <li className="floatinglist">C#</li>
-                                            <li className="floatinglist">Visual Basic</li>
+                                        <ul>                                            
                                             <li className="floatinglist">HTML</li>
                                             <li className="floatinglist">CSS</li>
                                             <li className="floatinglist">JavaScript</li>
+                                            <li className="floatinglist">C#</li>
+                                            <li className="floatinglist">Visual Basic</li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -166,17 +166,25 @@ export default class AboutPage extends React.Component
                                 <tr>
                                     <td>
                                         <ul>
+                                            <li className="floatinglist">JavaScript Libraries
+                                                <ul>
+                                                    <li>jQuery</li>
+                                                    <li>React (this site is built using React)</li>
+                                                </ul>
+                                            </li>
                                             <li className="floatinglist">ASP.NET
                                                 <ul>
                                                     <li>MVC</li>
                                                     <li>Web Forms</li>
                                                 </ul>
-                                            </li>
-                                            <li className="floatinglist">jQuery</li>
-                                            <li className="floatinglist">AngularJS</li>
+                                            </li>                                                                                        
                                             <li className="floatinglist">nodeJS
                                                 <ul>
-                                                    <li>Express</li>
+                                                    <li>Frameworks/Libraries
+                                                        <ul>
+                                                            <li>Express</li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
