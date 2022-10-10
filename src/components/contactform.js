@@ -79,10 +79,11 @@ export default class ContactForm extends React.Component
 
         if(this.isValid(name, 100) && this.isValidEmail(email.value) && this.isValid(message, 1000))
         {
-            let formData = new FormData();
-            formData.append(name.name, name.value);
+            let form = document.getElementById("contactForm");
+            let formData = new FormData(form);
+            /*formData.append(name.name, name.value);
             formData.append(email.name, email.value);
-            formData.append(message.name, message.value);
+            formData.append(message.name, message.value);*/
 
             /* for (const value of formData.values()) 
             {
