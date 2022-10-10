@@ -47,6 +47,7 @@ export default class ContactForm extends React.Component
                     <td colSpan={2}>
                         {/* <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50}/> */}
                         <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>
+                        <span id={"spanInvalidEmail"} style={{color: "red"}} hidden={true}><small>&nbsp;<i>Invalid Email</i></small></span>
                     </td> 
                 </tr>
                 <tr>
@@ -104,12 +105,7 @@ export default class ContactForm extends React.Component
                 email.value = "";
                 message.value = "";
                 this.setState({name: "", email: "", message: ""});
-                name.style.borderColor = "rgb(118, 118, 118)";
-                email.style.borderColor = "rgb(118, 118, 118)";
-                message.style.borderColor = "rgb(118, 118, 118)";
-                name.style.borderWidth = "1px";
-                email.style.borderWidth = "1px";
-                message.style.borderWidth = "1px";
+
                 alert("Message sent!");
             }
             else alert("Message could not be sent.");           
@@ -125,17 +121,8 @@ export default class ContactForm extends React.Component
     isValid = (elem, maxLength) =>
     {
         let validName = false;
-        if(elem.value.length < 2 || elem.value.length > maxLength) 
-        {
-            elem.style.borderColor = 'red'; 
-            elem.style.borderWidth = '2px';
-        } 
-        else 
-        {
-            elem.style.borderColor = 'green'; 
-            elem.style.borderWidth = '2px';
-            validName = true;
-        }
+        if(elem.value.length > 2 || elem.value.length < maxLength) validName = true;
+
         return validName;
     }
 
@@ -151,16 +138,12 @@ export default class ContactForm extends React.Component
         if(email.includes('@')) indexOfAt = email.search('@');
         if(email.includes('.')) indexOfDot = email.indexOf('.');
         if(indexOfDot > indexOfAt + 1) validEmail = true;
-        if(validEmail)
-        {
-            document.getElementById("contactEmail").style.borderColor = "green";
-            document.getElementById("contactEmail").style.borderWidth = "2px";
-        }
-        else
-        {
-            document.getElementById("contactEmail").style.borderColor = "red";
-            document.getElementById("contactEmail").style.borderWidth = "2px";
-        }
+
+        let span = document.getElementById("spanInvalidEmail");
+
+        if(validEmail === false) span.hidden = false;
+        else span.hidden = true;
+
         return validEmail;
     }
 
