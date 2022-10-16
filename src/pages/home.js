@@ -8,7 +8,6 @@ import AboutPage from "./about";
 import ContactPage from "./contact";
 import { ExternalUrlArrow } from '../components/icons';
 import Menu from "../components/menu";
-//import SiteHeader from "../components/header";
 
 export default class HomePage extends React.Component
 {
@@ -16,7 +15,6 @@ export default class HomePage extends React.Component
     {
         return (
             <>
-                {/* <SiteHeader/> */}
                 <Menu/>
                 <PageTemplate intro_id={"home"}
                     intro_content={<h1>Sameer Rizvi</h1>}
