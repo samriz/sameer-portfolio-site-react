@@ -13,7 +13,8 @@ export class ExternalUrlArrow extends React.Component
     }
 }
 
-export class LinkedInIcon extends React.Component{
+export class LinkedInIcon extends React.Component
+{
     render()
     {
         return (
