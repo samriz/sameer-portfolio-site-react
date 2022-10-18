@@ -33,32 +33,27 @@ export default class ContactForm extends React.Component
     {
         const { name, email, message } = this.state;
         return (
-        // <form id={"contactForm"} name="contact" method="post">
         <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}>
             <table id="contactTable">
                 <tbody>
                 <tr>
                     <td colSpan={2}>
-                        {/* <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100}/> */}
                         <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
                     </td>                                       
                 </tr>
                 <tr>
                     <td colSpan={2}>
-                        {/* <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50}/> */}
                         <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>
                         <span id={"spanInvalidEmail"} style={{color: "red"}} hidden={true}><small>&nbsp;<i>Invalid Email</i></small></span>
                     </td> 
                 </tr>
                 <tr>
                     <td>
-                        {/* <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000}/> */}
                         <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
                     </td>
                 </tr>
                 <tr>
                     <td id="tdSend">
-                        {/* <button type={"button"} className={"btn btn-outline-secondary"} onClick={this.formSubmit}>Send</button>*/}
                         <button type={"submit"} className={"btn btn-outline-secondary"}>Send</button>
                     </td>
                 </tr>
@@ -146,9 +141,4 @@ export default class ContactForm extends React.Component
 
         return validEmail;
     }
-
-    /*encode = (data) => 
-    {
-        return Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
-    }*/
 }
