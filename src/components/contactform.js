@@ -23,7 +23,7 @@ export class FormTextArea extends React.Component
 
 export default class ContactForm extends React.Component
 {  
-    constructor(props) 
+    constructor(props)
     {
         super(props);
         this.state = { name: "", email: "", message: "" };
@@ -38,18 +38,24 @@ export default class ContactForm extends React.Component
                 <tbody>
                 <tr>
                     <td colSpan={2}>
-                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
+                        <div className={"form-group"}>
+                            <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
+                        </div>
                     </td>                                       
                 </tr>
                 <tr>
                     <td colSpan={2}>
-                        <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>
-                        <span id={"spanInvalidEmail"} style={{color: "red"}} hidden={true}><small>&nbsp;<i>Invalid Email</i></small></span>
+                        <div className="form-group">
+                            <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>
+                            <span id={"spanInvalidEmail"} style={{color: "red"}} hidden={true}><small>&nbsp;<i>Invalid Email</i></small></span>
+                        </div>                        
                     </td> 
                 </tr>
                 <tr>
                     <td>
-                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
+                        <div className="form-group">
+                            <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
+                        </div>
                     </td>
                 </tr>
                 <tr>

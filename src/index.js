@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import "./styles/index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home";
+import "./styles/index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends React.Component
 {
