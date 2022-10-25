@@ -1,12 +1,35 @@
 import React from 'react';
 //import $ from "jquery";
+import FormGroupItem from "./formgroupitem";
 
 export class FormInput extends React.Component
 {
     render()
     {
         return (
-            <input type={this.props.type} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
+            <FormGroupItem
+                element={
+                    <input type={this.props.type} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
+                }
+            />        
+        );
+    }
+}
+
+export class EmailFormInput extends React.Component
+{
+    render()
+    {
+        return (
+            <FormGroupItem
+                element={
+                    <>
+                        <input type={"email"} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
+                        &nbsp;
+                        <span id={"spanInvalidEmail"} style={{color: "red"}} hidden={true}><small>&nbsp;<i>Invalid Email</i></small></span>
+                    </>
+                }
+            />        
         );
     }
 }
@@ -16,7 +39,11 @@ export class FormTextArea extends React.Component
     render()
     {
         return (
-            <textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
+            <FormGroupItem
+                element={
+                    <textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
+                }
+            />
         );
     }
 }
@@ -37,29 +64,22 @@ export default class ContactForm extends React.Component
             <table id="contactTable">
                 <tbody>
                 <tr>
-                    <td colSpan={2}>
-                        <div className={"form-group"}>
-                            <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
-                        </div>
+                    <td>
+                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
                     </td>                                       
                 </tr>
                 <tr>
-                    <td colSpan={2}>
-                        <div className="form-group">
-                            <FormInput type={"email"} name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>
-                            <span id={"spanInvalidEmail"} style={{color: "red"}} hidden={true}><small>&nbsp;<i>Invalid Email</i></small></span>
-                        </div>                        
+                    <td>
+                        <EmailFormInput name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>                        
                     </td> 
                 </tr>
                 <tr>
                     <td>
-                        <div className="form-group">
-                            <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
-                        </div>
+                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
                     </td>
                 </tr>
                 <tr>
-                    <td id="tdSend">
+                    <td>
                         <button type={"submit"} className={"btn btn-outline-secondary"}>Send</button>
                     </td>
                 </tr>
