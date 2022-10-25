@@ -8,18 +8,27 @@ export class MenuItem extends React.Component
 
 export default class Menu extends MenuItem
 {
-    renderMenuItem(href, val) {return (<MenuItem href={href} text={val}/>);}
+    //renderMenuItem(href, val) {return (<MenuItem href={href} text={val}/>);}
 
     render()
     {
         return (
           <nav className="menu sticky">
             <div id="divMenuItems">
-              {this.renderMenuItem("/#home", "sameer")}
-               | 
-              {this.renderMenuItem("/#about", "about")}
-               | 
-              {this.renderMenuItem("/#contact", "contact")}
+              <MenuItem
+                href={"/#home"}
+                text={"sameer"}
+              />
+              |
+              <MenuItem
+                href={"/#about"}
+                text={"about"}
+              />
+              |
+              <MenuItem
+                href={"/#contact"}
+                text={"contact"}
+              />
             </div>
           </nav>
         );
