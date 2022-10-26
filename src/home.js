@@ -1,33 +1,23 @@
 import React from 'react';
-import PageTemplate from "../pagetemplate";
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
-import Resume from "../misc/SameerRizviResume.pdf";
-import Footer from "../footer";
-import AboutPage from "./about";
-import ContactPage from "./contact";
-import { ExternalUrlArrow } from '../components/icons';
-import Menu from "../components/menu";
+import PageTemplate from "./pagetemplate";
+import Resume from "./misc/SameerRizviResume.pdf";
+import { ExternalUrlArrow } from './components/icons';
 
-export default class HomePage extends React.Component
+export default class Home extends React.Component
 {
     render()
     {
         return (
-            <>
-                <Menu/>
-                <PageTemplate intro_id={"home"}
-                    intro_content={<h1>Sameer Rizvi</h1>}
-                    main_content={this.homePageBody()}
-                />
-                <AboutPage/>
-                <ContactPage/>
-                <Footer/>
-            </>
+            <PageTemplate intro_id={"home"}
+                intro_content={<h1>Sameer Rizvi</h1>}
+                main_content={this.homeContent()}
+            />
         );
     }
 
-    homePageBody()
+    homeContent()
     {
         return(
         <div className={"leftPad"}>

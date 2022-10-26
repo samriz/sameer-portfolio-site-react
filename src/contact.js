@@ -1,6 +1,6 @@
 import React from 'react';
-import PageTemplate from "../pagetemplate";
-import ContactForm from "../components/contactform";
+import PageTemplate from "./pagetemplate";
+import ContactForm from "./components/contactform";
 
 /*class TableForm extends React.Component
 {
@@ -35,7 +35,7 @@ import ContactForm from "../components/contactform";
     }
 }*/
 
-export default class ContactPage extends React.Component
+export default class Contact extends React.Component
 {
     render()
     {
