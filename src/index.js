@@ -43,4 +43,8 @@ export class App extends React.Component
 // App render the "Index" component at the index url
 // Index is a single page and renders all the components in the page
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App/>);
+root.render(
+    <React.StrictMode>
+        <App/>
+    </React.StrictMode>
+);

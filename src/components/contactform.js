@@ -1,5 +1,6 @@
 import React from 'react';
-//import $ from "jquery";
+import $ from "jquery";
+import "../../node_modules/jquery-confirm/dist/jquery-confirm.min.js";
 import {FormInput, EmailFormInput, FormTextArea} from "./forminputs";
 
 export default class ContactForm extends React.Component
@@ -74,6 +75,8 @@ export default class ContactForm extends React.Component
                 method: "POST",
                 body: formData
             });
+
+            let modal;
             if(response.ok) 
             {
                 name.value = "";
@@ -81,9 +84,15 @@ export default class ContactForm extends React.Component
                 message.value = "";
                 this.setState({name: "", email: "", message: ""});
 
-                alert("Message sent!");
+                //alert("Message sent!");
+                modal = this.displayModal("Message sent!");
             }
-            else alert("Message could not be sent.");           
+            else 
+            {
+                //alert("Message could not be sent.");
+                modal = this.displayModal("Message could not be sent.");
+            }
+            modal.open();
         }
     }
 
@@ -120,5 +129,27 @@ export default class ContactForm extends React.Component
         else span.hidden = true;
 
         return validEmail;
+    }
+
+    /**
+     * 
+     * @param {string} modalContent 
+     * @returns Jconfirm
+     */
+    displayModal = (modalContent) =>
+    {
+        return $.confirm({
+            lazyOpen: true,
+            autoClose: false,
+            title: "",
+            content: modalContent,
+            buttons:
+            {
+                OK:
+                {
+                    keys: ["enter"]
+                }
+            }
+        });
     }
 }

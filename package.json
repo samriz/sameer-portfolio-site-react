@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.2",
     "jquery": "^3.6.1",
+    "jquery-confirm": "^3.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-hash-link": "^2.4.3",
