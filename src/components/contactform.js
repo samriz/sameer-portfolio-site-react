@@ -16,7 +16,7 @@ export default class ContactForm extends React.Component
         const { name, email, message } = this.state;
         return (
         <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}>
-            <table id="contactTable">
+            <table id={"contactTable"}>
                 <tbody>
                 <tr>
                     <td>
@@ -52,7 +52,7 @@ export default class ContactForm extends React.Component
     }
 
     /**
-     * @param{Event} e
+     * @param {Event} e
     */
     formSubmit = async (e) => 
     {
@@ -99,8 +99,9 @@ export default class ContactForm extends React.Component
     handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
     /**
-    * @param{HTMLElement} elem
-    * @param{number} maxLength
+    * @param {HTMLElement} elem
+    * @param {number} maxLength
+    * @returns boolean
     */
     isValid = (elem, maxLength) =>
     {
@@ -111,7 +112,8 @@ export default class ContactForm extends React.Component
     }
 
     /**
-    * @param{string} email
+    * @param {string} email
+    * @returns boolean
     */
     isValidEmail = (email) =>
     {            
