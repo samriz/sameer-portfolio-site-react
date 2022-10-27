@@ -83,16 +83,10 @@ export default class ContactForm extends React.Component
                 message.value = "";
                 this.setState({name: "", email: "", message: ""});
 
-                //alert("Message sent!");
-                //modal = this.displayModal("Message sent!");
                 modal = jqueryConfirm("Message sent!");
             }
-            else 
-            {
-                //alert("Message could not be sent.");
-                //modal = this.displayModal("Message could not be sent.");
-                modal = jqueryConfirm("test");
-            }
+            else modal = jqueryConfirm("Message could not be sent.");
+            
             modal.open();
         }
     }
