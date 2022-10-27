@@ -29,11 +29,13 @@ export class App extends React.Component
 {
     render()
     {
-        return (<BrowserRouter>
-            <Routes>
-                <Route index element={<Index/>}/>
-            </Routes>
-          </BrowserRouter>);
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<Index/>}/>
+                </Routes>
+          </BrowserRouter>
+        );
     }
 }
 
