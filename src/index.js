@@ -6,7 +6,6 @@ import Home from "./home";
 import About from "./about";
 import Contact from "./contact";
 import Footer from "./components/footer";
-
 import "./styles/index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
