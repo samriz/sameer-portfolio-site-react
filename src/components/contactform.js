@@ -1,5 +1,5 @@
 import React from 'react';
-import jqueryConfirm from "./modal";
+import jQueryConfirm from "./modal";
 import {FormInput, EmailFormInput, FormTextArea} from "./forminputs";
 
 export default class ContactForm extends React.Component
@@ -75,7 +75,7 @@ export default class ContactForm extends React.Component
                 body: formData
             });
 
-            let modal;
+            let modal = new jQueryConfirm();
             if(response.ok) 
             {
                 name.value = "";
@@ -83,11 +83,12 @@ export default class ContactForm extends React.Component
                 message.value = "";
                 this.setState({name: "", email: "", message: ""});
 
-                modal = jqueryConfirm("Message sent!");
+                modal.setModalContent("Message sent!");
             }
-            else modal = jqueryConfirm("Message could not be sent.");
-            
-            modal.open();
+            else modal.setModalContent("Message could not be sent.");
+        
+            modal.createModal();
+            modal.getModal().open();
         }
     }
 

@@ -1,24 +1,41 @@
 import $ from "jquery";
 import "../../node_modules/jquery-confirm/dist/jquery-confirm.min.js";
 
-export default function jqueryConfirm(modalContent)
+export default class jQueryConfirm
 {
-    let content;
+    #modalContent;
+    #modal;
+    constructor(modalContent = "This is a default message.")
+    {
+        this.#modalContent = modalContent;
+    }
 
-    if(typeof modalContent === "string") content = modalContent;
-    else content = "This is a default message.";
+    createModal()
+    {
+        let content = this.#modalContent;
 
-    return $.confirm({
-        lazyOpen: true,
-        autoClose: false,
-        title: "",
-        content: content,
-        buttons:
-        {
-            OK:
+        this.#modal = $.confirm({
+            lazyOpen: true,
+            autoClose: false,
+            title: "",
+            content: content,
+            buttons:
             {
-                keys: ["enter"]
+                OK:
+                {
+                    keys: ["enter"]
+                }
             }
-        }
-    });
+        });
+    }
+
+    getModalContent() {return this.#modalContent;}
+    getModal() {return this.#modal;}
+
+    setModalContent(modalContent) {this.#modalContent = modalContent;}
+    setModal(modal) 
+    {
+        this.setModalContent(modal.getModalContent());
+        this.#modal = modal;
+    }
 }
