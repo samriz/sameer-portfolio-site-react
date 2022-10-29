@@ -117,12 +117,14 @@ export default class ContactForm extends React.Component
         let indexOfAt = 0;
         let indexOfDot = 0;
 
-        if(email.includes('@')) indexOfAt = email.search('@');
-        if(email.includes('.')) indexOfDot = email.indexOf('.');
-        if(indexOfDot > indexOfAt + 1) validEmail = true;
+        if(typeof email === "string")
+        {
+            if(email.includes('@')) indexOfAt = email.search('@');
+            if(email.includes('.')) indexOfDot = email.indexOf('.');
+            if(indexOfDot > indexOfAt + 1) validEmail = true;
+        }
 
         let span = document.getElementById("spanInvalidEmail");
-
         if(validEmail === false) span.hidden = false;
         else span.hidden = true;
 
