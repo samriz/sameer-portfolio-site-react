@@ -15,8 +15,7 @@ export default class ContactForm extends React.Component
         const { name, email, message } = this.state;
         return (
         <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}>
-            <table id={"contactTable"}>
-                <tbody>
+            <table id={"contactTable"}>                
                 <tr>
                     <td>
                         <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
@@ -41,8 +40,7 @@ export default class ContactForm extends React.Component
                     <td>
                         <button type={"submit"} className={"btn btn-outline-secondary"}>Send</button>
                     </td>
-                </tr>
-                </tbody>             
+                </tr>                             
             </table>
             <input type="hidden" name="form-name" value="contact"/>
         </form>);

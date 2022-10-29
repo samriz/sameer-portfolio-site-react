@@ -8,7 +8,7 @@ export class FormInput extends React.Component
         return (
             <FormGroupItem
                 element={
-                    <input type={this.props.type} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
+                    <input type={this.props.type} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minLength} maxLength={this.props.maxLength} style={{width: "100%"}}/>
                 }
             />        
         );
@@ -23,8 +23,8 @@ export class EmailFormInput extends React.Component
             <FormGroupItem
                 element={
                     <>
-                        <input type={"email"} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
-                        &nbsp;
+                        <input type={"email"} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} minLength={this.props.minLength} maxLength={this.props.maxLength} style={{width: "100%"}}/>
+                        {/* &nbsp; */}
                         <span id={"spanInvalidEmail"} style={{color: "red"}} hidden={true}><small>&nbsp;<i>Invalid Email</i></small></span>
                     </>
                 }
@@ -40,7 +40,7 @@ export class FormTextArea extends React.Component
         return (
             <FormGroupItem
                 element={
-                    <textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength}/>
+                    <textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={this.props.class} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength} style={{width: "100%"}}/>
                 }
             />
         );
