@@ -27,6 +27,11 @@ export default class ContactForm extends React.Component
                         <EmailFormInput name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>                        
                     </td> 
                 </tr>
+                <tr id={"trPhone"}>
+                    <td>
+                        <input type="tel" id="phone" placeholder="Phone" className={"form-control"}/>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
@@ -48,6 +53,9 @@ export default class ContactForm extends React.Component
         document.getElementById("contactName").required = true;
         document.getElementById("contactEmail").required = true;
         document.getElementById("contactMessage").required = true;
+
+        //document.getElementById("phone").value = "0";
+        document.getElementById("trPhone").hidden = true;
     }
 
     /**
@@ -60,36 +68,39 @@ export default class ContactForm extends React.Component
         let email = document.getElementById("contactEmail");
         let message = document.getElementById("contactMessage");
 
-        if(this.isValid(name, 100) && this.isValidEmail(email.value) && this.isValid(message, 1000))
+        if(document.getElementById("phone").value.length === 0)
         {
-            let form = document.getElementById("contactForm");
-            let formData = new FormData(form);
-
-            /* for (const value of formData.values()) 
+            if(this.isValid(name, 100) && this.isValidEmail(email.value) && this.isValid(message, 1000))
             {
-                console.log(value);
-            } */
+                let form = document.getElementById("contactForm");
+                let formData = new FormData(form);
+
+                /* for (const value of formData.values()) 
+                {
+                    console.log(value);
+                } */
+                
+                let response = await fetch("/", {
+                    method: "POST",
+                    body: formData
+                });
+
+                let modal = new jQueryConfirm();
+                if(response.ok) 
+                {
+                    name.value = "";
+                    email.value = "";
+                    message.value = "";
+                    this.setState({name: "", email: "", message: ""});
+
+                    modal.setModalContent("Message sent!");
+                }
+                else modal.setModalContent("Message could not be sent.");
             
-            let response = await fetch("/", {
-                method: "POST",
-                body: formData
-            });
-
-            let modal = new jQueryConfirm();
-            if(response.ok) 
-            {
-                name.value = "";
-                email.value = "";
-                message.value = "";
-                this.setState({name: "", email: "", message: ""});
-
-                modal.setModalContent("Message sent!");
+                modal.createModal();
+                modal.getModal().open();
             }
-            else modal.setModalContent("Message could not be sent.");
-        
-            modal.createModal();
-            modal.getModal().open();
-        }
+        }        
     }
 
     handleChange = e => this.setState({ [e.target.name]: e.target.value });
