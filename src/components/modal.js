@@ -8,6 +8,7 @@ export default class jQueryConfirm
     constructor(modalContent = "This is a default message.")
     {
         this.#modalContent = modalContent;
+        this.#modal = null;
     }
 
     createModal()
@@ -29,7 +30,11 @@ export default class jQueryConfirm
         });
     }
 
-    getModalContent() {return this.#modalContent;}
+    getModalContent() 
+    {
+        if(typeof this.#modalContent === "undefined" | "null") this.#modalContent = "";
+        return this.#modalContent;
+    }
     getModal() {return this.#modal;}
 
     setModalContent(modalContent) {this.#modalContent = modalContent;}
