@@ -18,7 +18,7 @@ export default class About extends React.Component
                     <figure>
                         <img src={LinkedInPicture} id="profilepic" className="center" alt="Sameer Rizvi"/>
                         <figcaption>
-                            <HashLink to="/#contact" className="textlink" title="Contact">Contact Me</HashLink>
+                            <HashLink smooth to="/#contact" className="textlink" title="Contact">Contact Me</HashLink>
                             <br></br>
                             <a href={"https://www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn <ExternalUrlArrow/></a>
                         </figcaption>
@@ -28,7 +28,7 @@ export default class About extends React.Component
         }
         main_content={
             <>
-                <div className={"contentsdiv leftPad"} id={"divAboutDetails"}>
+                <div className={"leftPad"} id={"divAboutDetails"}>
                     <details>
                         <summary>Education</summary>
                         <table id="educationtable" cellSpacing="5" cellPadding="5" width="90%" border="0">
