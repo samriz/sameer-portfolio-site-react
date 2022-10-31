@@ -18,12 +18,12 @@ export default class ContactForm extends React.Component
             <table id={"contactTable"}>                
                 <tr>
                     <td>
-                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} className={"form-control"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
+                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
                     </td>                                       
                 </tr>
                 <tr>
                     <td>
-                        <EmailFormInput name={"email"} id={"contactEmail"} placeholder={"Email"} className={"form-control"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>                        
+                        <EmailFormInput name={"email"} id={"contactEmail"} placeholder={"Email"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>                        
                     </td> 
                 </tr>
                 <tr id={"trPhone"}>

@@ -6,7 +6,7 @@ export default class FormGroupItem extends React.Component
     render()
     {
         return (
-            <div className={"form-group"}>
+            <div className={"form-group ad-textbox"}>
                 {this.props.element}
             </div>
         );

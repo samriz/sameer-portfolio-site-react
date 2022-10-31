@@ -4,7 +4,7 @@ export class Intro extends React.Component
 {
     render() 
     {
-        return (<main id={this.props.header_id} className="intro jumbotron">{this.props.content}</main>);
+        return (<div id={this.props.header_id} className="intro jumbotron">{this.props.content}</div>);
     }
 }
 
@@ -15,7 +15,7 @@ export default class PageTemplate extends React.Component
         return (        
             <div className="allButFooter">
                 <Intro header_id={this.props.intro_id} content={this.props.intro_content}/>
-                <div className="contentsdiv">{this.props.main_content}</div>
+                <main className="contents">{this.props.main_content}</main>
             </div>
         );
     }
