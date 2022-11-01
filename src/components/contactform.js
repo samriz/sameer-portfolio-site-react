@@ -18,22 +18,22 @@ export default class ContactForm extends React.Component
             <table id={"contactTable"}>                
                 <tr>
                     <td>
-                        <FormInput type={"text"} name={"name"} id={"contactName"} placeholder={"Name"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
+                        <FormInput type={"text"} id={"contactName"} name={"name"} placeholder={"Name"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
                     </td>                                       
                 </tr>
                 <tr>
                     <td>
-                        <EmailFormInput name={"email"} id={"contactEmail"} placeholder={"Email"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>                        
+                        <EmailFormInput id={"contactEmail"} name={"email"} placeholder={"Email"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>                        
                     </td> 
                 </tr>
                 <tr id={"trPhone"}>
                     <td>
-                        <input type="tel" id="phone" placeholder="Phone" className={"form-control"}/>
+                        <input type={"tel"} id={"contactPhone"} name={"phone"} placeholder={"Phone"} className={"form-control"}/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <FormTextArea name={"message"} id={"contactMessage"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
+                        <FormTextArea id={"contactMessage"} name={"message"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +52,7 @@ export default class ContactForm extends React.Component
         document.getElementById("contactEmail").required = true;
         document.getElementById("contactMessage").required = true;
 
-        //document.getElementById("phone").value = "0";
+        //document.getElementById("contactPhone").value = "0";
         document.getElementById("trPhone").hidden = true;
     }
 
@@ -66,7 +66,7 @@ export default class ContactForm extends React.Component
         let email = document.getElementById("contactEmail");
         let message = document.getElementById("contactMessage");
 
-        if(document.getElementById("phone").value.length === 0)
+        if(document.getElementById("contactPhone").value.length === 0)
         {
             if(this.isValid(name, 100) && this.isValidEmail(email.value) && this.isValid(message, 1000))
             {

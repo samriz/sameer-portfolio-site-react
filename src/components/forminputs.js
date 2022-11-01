@@ -15,7 +15,7 @@ export class FormInput extends React.Component
             <FormGroupItem
                 element={
                     <>
-                        <input type={this.props.type} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={`${this.state.value ? "has-value form-control" : "form-control"}`} minLength={this.props.minLength} maxLength={this.props.maxLength} onChange={this.handleChange}/>
+                        <input type={this.props.type} id={this.props.id} name={this.props.name} placeholder={this.props.placeholder} className={`${this.state.value ? "has-value form-control" : "form-control"}`} minLength={this.props.minLength} maxLength={this.props.maxLength} onChange={this.handleChange}/>
                         <div className={"underline"}/>
                     </>
                 }
@@ -40,7 +40,7 @@ export class EmailFormInput extends React.Component
             <FormGroupItem
                 element={
                     <>
-                        <input type={"email"} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={`${this.state.value ? "has-value form-control" : "form-control"}`} minLength={this.props.minLength} maxLength={this.props.maxLength} onChange={this.handleChange}/>
+                        <input type={"email"} id={this.props.id} name={this.props.name} placeholder={this.props.placeholder} className={`${this.state.value ? "has-value form-control" : "form-control"}`} minLength={this.props.minLength} maxLength={this.props.maxLength} onChange={this.handleChange}/>
                         <div className={"underline"}/>
                         
                         <span id={"spanInvalidEmail"} style={{color: "red"}} hidden={true}><br></br><small>&nbsp;<i>Invalid Email</i></small></span>
@@ -67,9 +67,7 @@ export class FormTextArea extends React.Component
             <FormGroupItem
                 element={
                     <>
-                        <textarea name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} className={`${this.state.value ? "has-value form-control" : "form-control"}`} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength} onChange={this.handleChange}/>
-                        {/* <span className={"material-symbols-outlined"}>message</span> */}
-                        {/* <label htmlFor="textbox">Message</label> */}
+                        <textarea id={this.props.id} name={this.props.name} placeholder={this.props.placeholder} className={`${this.state.value ? "has-value form-control" : "form-control"}`} rows={this.props.rows} cols={this.props.cols} minLength={this.props.minLength} maxLength={this.props.maxLength} onChange={this.handleChange}/>
                         <div className={"underline"}/>
                     </>
                 }
