@@ -10,7 +10,7 @@ export default class About extends React.Component
 {
     render()
     {
-        return (<PageTemplate intro_id={"about"}
+        return (<PageTemplate intro_id={"about"} main_id={"aboutMain"}
         intro_content={
             <>
             <h1>About</h1>

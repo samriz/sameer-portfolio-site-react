@@ -40,7 +40,7 @@ export default class Contact extends React.Component
     render()
     {
         return (
-            <PageTemplate intro_id={"contact"}
+            <PageTemplate intro_id={"contact"} main_id={"contactMain"}
                 intro_content={<h1>Contact Me</h1>}
                 main_content={
                     <>

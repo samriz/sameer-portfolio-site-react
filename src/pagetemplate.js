@@ -12,10 +12,10 @@ export default class PageTemplate extends React.Component
 {
     render()
     {
-        return (        
+        return (     
             <div className="allButFooter">
                 <Intro header_id={this.props.intro_id} content={this.props.intro_content}/>
-                <main className="contents">{this.props.main_content}</main>
+                <main id={this.props.main_id} className="contents">{this.props.main_content}</main>
             </div>
         );
     }
