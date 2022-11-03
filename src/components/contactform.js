@@ -38,10 +38,11 @@ export default class ContactForm extends React.Component
                 </tr>
                 <tr>
                     <td>
+                        <div data-netlify-recaptcha="true"></div>
                         <button type={"submit"} className={"btn btn-outline-secondary"}>Send</button>
                     </td>
                 </tr>                             
-            </table>
+            </table>       
             <input type="hidden" name="form-name" value="contact"/>
         </form>);
     }
