@@ -14,7 +14,7 @@ export default class ContactForm extends React.Component
     {
         const { name, email, message } = this.state;
         return (
-        <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit} data-netlify-recaptcha="true">
+        <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}>
             <table id={"contactTable"}>                
                 <tr>
                     <td>
@@ -38,7 +38,6 @@ export default class ContactForm extends React.Component
                 </tr>
                 <tr>
                     <td>
-                        <div data-netlify-recaptcha="true"></div>
                         <button type={"submit"} className={"btn btn-outline-secondary"}>Send</button>
                     </td>
                 </tr>                             
