@@ -140,9 +140,6 @@ button{border-radius: 2em;}
 
 td input, td textarea{width: 100%;}
 
-.ad-textbox {
-  position: relative;
-}
 .ad-textbox {position: relative;}
 
 .ad-textbox > .underline 
