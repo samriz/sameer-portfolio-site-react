@@ -16,6 +16,7 @@ img
 /* body
 {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #1C2A44;
 } */
 
 header{height: 110vh;}
@@ -64,6 +65,16 @@ button{border-radius: 2em;}
     width: auto;
 }
 
+#divMenuItems
+{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  border: 0.1px solid #099FFF;
+  background-color: #18181b;
+  box-shadow: 0 4px 8px 0 #00FFFF, 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
 /*class selector styles*/
 
 /* .contents
@@ -95,7 +106,17 @@ button{border-radius: 2em;}
     border-style: outset;
 }
 
-.menuitem{font-size: 20px;}
+.menuItem
+{
+  margin: auto;
+  color: white;
+  /* font-size: 20px; */
+  cursor: pointer;
+}
+
+.menuItem:after{display:block;}
+
+.menuItem:hover:after{transform: scaleX(1);}
 
 .docked{position: fixed;}
 
@@ -103,10 +124,7 @@ button{border-radius: 2em;}
 
 .hidden{display: none;}
 
-.allButFooter 
-{
-    min-height: calc(100vh - 95px);
-}
+.allButFooter{min-height: calc(100vh - 95px);}
 
 .bi-linkedin{color: #0a66c2;}
 
@@ -125,8 +143,10 @@ td input, td textarea{width: 100%;}
 .ad-textbox {
   position: relative;
 }
+.ad-textbox {position: relative;}
 
-.ad-textbox > .underline {
+.ad-textbox > .underline 
+{
   position: absolute;
   left: 0;
   bottom: 0;
@@ -137,8 +157,8 @@ td input, td textarea{width: 100%;}
   transition: 0.35s;
 }
 
-.ad-textbox > span,
-.ad-textbox > label {
+.ad-textbox > span, .ad-textbox > label 
+{
   position: absolute;
   pointer-events: none;
   translate: 0 -50%;
@@ -146,19 +166,22 @@ td input, td textarea{width: 100%;}
   transition: 0.35s;
 }
 
-.ad-textbox > span {
+.ad-textbox > span 
+{
   top: 50%;
   left: 0;
 }
 
-.ad-textbox > label {
+.ad-textbox > label 
+{
   top: 50%;
   left: 34px;
   white-space: nowrap;
   font-family: "Euclid Circular A";
 }
 
-.ad-textbox > input, .ad-textbox > textarea {
+.ad-textbox > input, .ad-textbox > textarea 
+{
   height: 60px;
   /* width: 220px; */
   padding-left: 34px;
@@ -171,29 +194,26 @@ td input, td textarea{width: 100%;}
   font-size: 16px;
 }
 
-.ad-textbox > :is(input:focus, input.has-value) ~ span,  .ad-textbox > :is(textarea:focus, textarea.has-value) ~ span{
-  color: rgba(255, 255, 255, 0.96);
-}
+.ad-textbox > :is(input:focus, input.has-value) ~ span,  .ad-textbox > :is(textarea:focus, textarea.has-value) ~ span{color: rgba(255, 255, 255, 0.96);}
 
-.ad-textbox > :is(input:focus, input.has-value) ~ label, .ad-textbox > :is(textarea:focus, textarea.has-value) ~ label {
-  color: #0fa5a2;
-}
+.ad-textbox > :is(input:focus, input.has-value) ~ label, .ad-textbox > :is(textarea:focus, textarea.has-value) ~ label {color: #0fa5a2;}
 
-.ad-textbox > :is(input:focus, input.has-value) ~ label, .ad-textbox > :is(textarea:focus, textarea.has-value) ~ label {
+.ad-textbox > :is(input:focus, input.has-value) ~ label, .ad-textbox > :is(textarea:focus, textarea.has-value) ~ label 
+{
   translate: -42px -44px;
   scale: 0.875;
 }
 
-.ad-textbox > :is(input:focus, input.has-value) ~ .underline, .ad-textbox > :is(textarea:focus, textarea.has-value) ~ .underline {
-  transform: scaleX(1);
-}
+.ad-textbox > :is(input:focus, input.has-value) ~ .underline, .ad-textbox > :is(textarea:focus, textarea.has-value) ~ .underline {transform: scaleX(1);}
 
-.md-textbox {
+.md-textbox 
+{
   position: relative;
   font-family: "Euclid Circular A";
 }
 
-.md-textbox :is(label, span) {
+.md-textbox :is(label, span) 
+{
   position: absolute;
   top: 50%;
   translate: 0 -50%;
@@ -202,13 +222,15 @@ td input, td textarea{width: 100%;}
   transition: 0.3s;
 }
 
-.md-textbox > label {
+.md-textbox > label 
+{
   left: 10px;
   translate: 0 -50%;
   padding: 4px 8px;
 }
 
-.md-textbox > span {
+.md-textbox > span 
+{
   right: 16px;
   font-size: 28px;
 }
@@ -227,15 +249,9 @@ td input, td textarea{width: 100%;}
   font-size: 16px;
 }
 
-.md-textbox > :is(input:focus, .has-value), .md-textbox > :is(textarea:focus, .has-value)
-{
-  border-color: #8f44fd;
-}
+.md-textbox > :is(input:focus, .has-value), .md-textbox > :is(textarea:focus, .has-value){border-color: #8f44fd;}
 
-.md-textbox > :is(input:focus, .has-value) ~ span, .md-textbox > :is(textarea:focus, .has-value) ~ span 
-{
-  color: #f9f9f9;
-}
+.md-textbox > :is(input:focus, .has-value) ~ span, .md-textbox > :is(textarea:focus, .has-value) ~ span{color: #f9f9f9;}
 
 .md-textbox > :is(input:focus, .has-value) ~ label, .md-textbox > :is(textarea:focus, .has-value) ~ label 
 {
