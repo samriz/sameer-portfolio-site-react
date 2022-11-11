@@ -13,18 +13,18 @@ export default class Menu extends MenuItem
     render()
     {
         return (
-          <nav className="menu sticky">
+          <nav className="menu">
             <div id="divMenuItems">
               <MenuItem
                 href={"/#home"}
                 text={"sameer"}
               />
-              |
+              <span style={{color: "white"}}>|</span>
               <MenuItem
                 href={"/#about"}
                 text={"about"}
               />
-              |
+              <span style={{color: "white"}}>|</span>
               <MenuItem
                 href={"/#contact"}
                 text={"contact"}
