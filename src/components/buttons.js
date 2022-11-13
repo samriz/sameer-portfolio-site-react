@@ -4,6 +4,6 @@ export class DownloadButton extends React.Component
 {
     render()
     {
-        return (<button className={"leftPad"} style={{borderRadius: "2em",}}><a href={this.props.file} download>{this.props.buttonText}</a></button>);
+        return (<button className={"leftPad roundedCorners"}><a href={this.props.file} download>{this.props.buttonText}</a></button>);
     }
 }

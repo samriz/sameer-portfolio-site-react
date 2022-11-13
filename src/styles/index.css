@@ -21,7 +21,7 @@ img
 
 header{height: 110vh;}
 
-button{border-radius: 2em;}
+.roundedCorners{border-radius: 2em;}
 
 /*id selector styles*/
 
