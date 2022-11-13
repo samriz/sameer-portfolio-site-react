@@ -75,6 +75,28 @@ button{border-radius: 2em;}
   box-shadow: 0 4px 8px 0 #00FFFF, 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+#hamburgerButton
+{
+    background-color: white;
+    margin: 0px;
+    width: 100%; /*button fits size of ul when ul is open*/
+}
+
+#hamburgerList
+{
+    list-style-type: none;
+    padding: 0%;
+    margin: 0px;
+    background-color: white;
+}
+
+#selectMobileMenu
+{
+    border-radius: 4px; /*rounded corners*/
+    border-color: rgb(206, 212, 218);
+    height: 30px;
+}
+
 /*class selector styles*/
 
 /* .contents
@@ -266,3 +288,9 @@ td input, td textarea{width: 100%;}
   background-color: #303030;
   color: #faf6f6;
 } */
+
+.hamburgerListItem
+{
+    text-align: center;
+    border-bottom: 1px solid; 
+}

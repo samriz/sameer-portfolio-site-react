@@ -1,12 +1,7 @@
 import React from "react";
-import { HashLink } from 'react-router-hash-link';
+import { MenuItem } from "./menuitem";
 
-export class MenuItem extends React.Component
-{
-    render() {return (<HashLink className={"menuItem"} smooth to={this.props.href}>{this.props.text}</HashLink>);}
-}
-
-export default class Menu extends MenuItem
+export default class Menu extends React.Component
 {
     //renderMenuItem(href, val) {return (<MenuItem href={href} text={val}/>);}
 

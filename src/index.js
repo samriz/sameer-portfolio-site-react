@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "./components/menu";
+import MobileMenu from './components/mobilemenu';
 import Home from "./home";
 import About from "./about";
 import Contact from "./contact";
@@ -11,17 +12,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export class Index extends React.Component
 {
+    constructor(props)
+    {
+        super(props);
+        this.state = { viewportWidth: 0 };
+    }
+
     render()
     {
-        return (
-            <>
-                <Menu/>
-                <Home/>
-                <About/>
-                <Contact/>
-                <Footer/>               
-            </>
-        );
+        this.setState({viewportWidth: window.visualViewport.width});
+        if(this.state.viewportWidth > 640)
+        {
+            return (
+                <>
+                    <Menu/>
+                    <Home/>
+                    <About/>
+                    <Contact/>
+                    <Footer/>               
+                </>
+            );
+        }
+        else
+        {
+            return (
+                <>
+                    <MobileMenu/>
+                    <Home/>
+                    <About/>
+                    <Contact/>
+                    <Footer/>               
+                </>
+            );
+        }
     }
 }
 
