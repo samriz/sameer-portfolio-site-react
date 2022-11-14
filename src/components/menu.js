@@ -8,8 +8,8 @@ export default class Menu extends React.Component
     render()
     {
         return (
-          <nav className="menu">
-            <div id="divMenuItems">
+          <nav className={"menu"}>
+            <div id={"divMenuItems"}>
               <MenuItem
                 href={"/#home"}
                 text={"sameer"}

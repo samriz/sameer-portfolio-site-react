@@ -8,5 +8,5 @@ export class MenuItem extends React.Component
 
 export class MobileMenuItem extends React.Component
 {
-    render() {return (<HashLink smooth to={this.props.href}>{this.props.text}</HashLink>);}
+    render() {return (<HashLink className={"mobileMenuItem"} smooth to={this.props.href}>{this.props.text}</HashLink>);}
 }

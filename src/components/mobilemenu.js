@@ -1,6 +1,5 @@
 import React from "react";
 import { MobileMenuItem } from "./menuitem";
-//import $ from "jquery";
 
 export default class MobileMenu extends React.Component
 {
@@ -8,9 +7,8 @@ export default class MobileMenu extends React.Component
     {
         return(
             <nav className={"menu"}>
-                {/* <div id="divMenuItems"> */}
                     <button id="hamburgerButton" className={"nav-toggle"} onClick={this.showOrHideList}>
-                        <i id="hamburgerITag" class="fas fa-bars"></i>
+                        <i id="hamburgerITag" className={"fas fa-bars"}></i>
                     </button>
                     <ul id={"hamburgerList"}>
                         <li className={"hamburgerListItem"}>
@@ -32,7 +30,6 @@ export default class MobileMenu extends React.Component
                             />
                         </li>
                     </ul>
-                {/* </div> */}
             </nav>
         );
     }

@@ -36,13 +36,6 @@ header{height: 110vh;}
     margin-right: auto;
 }
 
-#selectMobileMenu
-{
-    border-radius: 4px; /*rounded corners*/
-    border-color: rgb(206, 212, 218);
-    height: 30px;
-}
-
 #hamburgerButton
 {
     background-color: white;
@@ -80,21 +73,6 @@ header{height: 110vh;}
     background-color: white;
     margin: 0px;
     width: 100%; /*button fits size of ul when ul is open*/
-}
-
-#hamburgerList
-{
-    list-style-type: none;
-    padding: 0%;
-    margin: 0px;
-    background-color: white;
-}
-
-#selectMobileMenu
-{
-    border-radius: 4px; /*rounded corners*/
-    border-color: rgb(206, 212, 218);
-    height: 30px;
 }
 
 /*class selector styles*/
@@ -136,13 +114,23 @@ header{height: 110vh;}
   color: white;
   cursor: pointer;
   width: 100%;
-  border-radius: 2px;
-  border-color: white;
+  /* border-radius: 2px;
+  border-color: white; */
+}
+
+.mobileMenuItem
+{
+  cursor: pointer;
+  display: block;
 }
 
 .menuItem:after{display:block;}
 
 .menuItem:hover:after{transform: scaleX(1);}
+
+.mobileMenuItem:after{display:block;}
+
+.mobileMenuItem:hover:after{transform: scaleX(1);}
 
 .docked{position: fixed;}
 
@@ -288,9 +276,3 @@ td input, td textarea{width: 100%;}
   background-color: #303030;
   color: #faf6f6;
 } */
-
-.hamburgerListItem
-{
-    text-align: center;
-    border-bottom: 1px solid; 
-}
