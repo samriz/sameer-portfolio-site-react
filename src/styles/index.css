@@ -1,4 +1,4 @@
-a:link,a:hover,a:visited{text-decoration: none;}
+a:link,a:visited{text-decoration: none;}
 
 footer
 {
@@ -22,6 +22,8 @@ img
 header{height: 110vh;}
 
 td input, td textarea{width: 100%;}
+
+nav{height: 35px;}
 
 .roundedCorners{border-radius: 2em;}
 
@@ -125,6 +127,7 @@ td input, td textarea{width: 100%;}
 .mobileMenuItem
 {
   cursor: pointer;
+  height: 35px;
   display: block;
 }
 
