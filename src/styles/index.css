@@ -74,6 +74,8 @@ td input, td textarea{width: 100%;}
 {
     background-color: white;
     margin: 0px;
+    display: block;
+    height: 100%;
     width: 100%; /*button fits size of ul when ul is open*/
 }
 
