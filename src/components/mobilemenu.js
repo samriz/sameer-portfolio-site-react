@@ -7,8 +7,8 @@ export default class MobileMenu extends React.Component
     {
         return(
             <nav className={"menu"}>
-                    <button id="hamburgerButton" className={"nav-toggle"} onClick={this.showOrHideList}>
-                        <i id="hamburgerITag" className={"fas fa-bars"}></i>
+                    <button id="hamburgerButton" className={"nav-toggle fas fa-bars"} style={{borderTop: "none"}} onClick={this.showOrHideList}>
+                        {/* <i id="hamburgerITag" className={"fas fa-bars"}></i> */}
                     </button>
                     <ul id={"hamburgerList"}>
                         <li className={"hamburgerListItem"}>
@@ -36,7 +36,13 @@ export default class MobileMenu extends React.Component
 
     componentDidMount()
     {
-        document.getElementById("hamburgerList").hidden = true;
+        const hamburgerList = document.getElementById("hamburgerList");
+        hamburgerList.hidden = true;
+        document.addEventListener("click", (e) => {
+            const hamburgerButton = document.getElementById("hamburgerButton");
+            let clickedElement = e.target;
+            if(clickedElement !== hamburgerButton) hamburgerList.hidden = true;
+        });
     }
 
     showOrHideList = () => 

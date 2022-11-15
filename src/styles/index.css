@@ -1,4 +1,4 @@
-a:link,a:hover,a:visited,a:active{text-decoration: none;}
+a:link,a:hover,a:visited{text-decoration: none;}
 
 footer
 {
@@ -20,6 +20,8 @@ img
 } */
 
 header{height: 110vh;}
+
+td input, td textarea{width: 100%;}
 
 .roundedCorners{border-radius: 2em;}
 
@@ -151,8 +153,6 @@ header{height: 110vh;}
 }
 
 .leftPad{padding-left: 5px;}
-
-td input, td textarea{width: 100%;}
 
 .ad-textbox {position: relative;}
 
