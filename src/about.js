@@ -60,6 +60,14 @@ export default class About extends React.Component
                         <table id="employmenttable" cellSpacing="5" cellPadding="5" width="90%" border="0">
                         <tbody>
                             <tr valign="TOP">
+                                <td>2022-Present</td> 
+                                <td>
+                                    <strong>Consilio &mdash; Remote</strong><br/>              
+                                    <strong>Software Engineer</strong>
+                                    <br/>                        
+                                </td>
+                            </tr>
+                            <tr valign="TOP">
                                 <td>2021-2022</td> 
                                 <td>
                                     <strong>Spinutech, LLC &mdash; Remote</strong><br/>              
