@@ -40,21 +40,6 @@ nav{height: 35px;}
     margin-right: auto;
 }
 
-#hamburgerButton
-{
-    background-color: white;
-    margin: 0px;
-    width: 100%; /*button fits size of ul when ul is open*/
-}
-
-#hamburgerList
-{
-    list-style-type: none;
-    padding: 0%;
-    margin: 0px;
-    background-color: white;
-}
-
 #divAboutDetails td
 {
     border-style: solid;
@@ -72,13 +57,33 @@ nav{height: 35px;}
   box-shadow: 0 4px 8px 0 #00FFFF, 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+#divMobileMenuItems
+{
+  /* display: flex;
+  flex-direction: row;
+  padding: 10px 0; */
+  border: 0.1px solid #099FFF;
+  background-color: #18181b;
+  box-shadow: 0 4px 8px 0 #00FFFF, 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
 #hamburgerButton
 {
-    background-color: white;
+    background-color: #e9ecef;
     margin: 0px;
     display: block;
-    height: 100%;
-    width: 100%; /*button fits size of ul when ul is open*/
+    height: 35px;
+
+    /*button fits size of ul when ul is open*/
+    width: 100%;
+}
+
+#hamburgerList
+{
+    list-style-type: none;
+    padding: 0%;
+    margin: 0px;
+    /* background-color: white; */
 }
 
 /*class selector styles*/
@@ -129,6 +134,8 @@ nav{height: 35px;}
   cursor: pointer;
   height: 35px;
   display: block;
+  text-align: center;
+  color: white;
 }
 
 .menuItem:after{display:block;}
@@ -275,9 +282,3 @@ nav{height: 35px;}
   color: rgba(255, 255, 255, 0.75);
   translate: 0 -46px;
 }
-
-/* .jumbotron
-{
-  background-color: #303030;
-  color: #faf6f6;
-} */
