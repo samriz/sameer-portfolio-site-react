@@ -18,7 +18,7 @@ export default class About extends React.Component
                     <figure>
                         <img src={LinkedInPicture} id="profilepic" className="center" alt="Sameer Rizvi"/>
                         <figcaption>
-                            <HashLink smooth to="/#contact" className="textlink" title="Contact">Contact Me</HashLink>
+                            <HashLink smooth to="/#contact" className="textlink" title="Contact">Contact me</HashLink>
                             <br></br>
                             <a href={"https://www.linkedin.com/in/sameer-rizvi-bb788375"} target={"_blank"}>LinkedIn <ExternalUrlArrow/></a>
                         </figcaption>
@@ -56,7 +56,7 @@ export default class About extends React.Component
                     </details>
 
                     <details>
-                        <summary>Professional Experience</summary>
+                        <summary>Professional experience</summary>
                         <table id="employmenttable" cellSpacing="5" cellPadding="5" width="90%" border="0">
                         <tbody>
                             <tr valign="TOP">
@@ -241,7 +241,7 @@ export default class About extends React.Component
                     </details>
 
                     <details id={"samples"}>
-                        <summary id={"summaryProfessionalSamples"}>Links To My Professional Work</summary>
+                        <summary id={"summaryProfessionalSamples"}>Links to some of my professional work</summary>
                             <table>                            
                                 <thead>
                                     <tr>
