@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTemplate from "./pagetemplate";
 import ContactForm from "./components/contactform";
+import "./styles/textbox.css"
 
 /*class TableForm extends React.Component
 {
