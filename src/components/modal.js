@@ -35,9 +35,11 @@ export default class jQueryConfirm
         if(typeof this.#modalContent === "undefined" | "null") this.#modalContent = "";
         return this.#modalContent;
     }
+    
     getModal() {return this.#modal;}
 
     setModalContent(modalContent) {this.#modalContent = modalContent;}
+
     setModal(modal) 
     {
         this.setModalContent(modal.getModalContent());
