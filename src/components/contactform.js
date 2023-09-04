@@ -12,7 +12,6 @@ export default class ContactForm extends React.Component
 
     render()
     {
-        //const { name, email, message } = this.state;
         return (
         <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}>
             <table id={"contactTable"}>                
@@ -46,19 +45,11 @@ export default class ContactForm extends React.Component
         </form>);
     }
 
-    /**
-     * @param {Event} e
-    */
-    handleChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    }
-
     componentDidMount()
     {
         document.getElementById("contactName").required = true;
         document.getElementById("contactEmail").required = true;
         document.getElementById("contactMessage").required = true;
-        //document.getElementById("contactPhone").value = "0";
         document.getElementById("trPhone").hidden = true;
     }
 
