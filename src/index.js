@@ -64,7 +64,7 @@ export class App extends React.Component
 
 // create the root using the element of id "root" in index.html
 // add "App" to the root
-// App render the "Index" component at the index url
+// App renders the "Index" component at the index url
 // Index is a single page and renders all the components in the page
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
