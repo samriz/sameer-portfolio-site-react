@@ -12,18 +12,18 @@ export default class ContactForm extends React.Component
 
     render()
     {
-        const { name, email, message } = this.state;
+        //const { name, email, message } = this.state;
         return (
         <form id={"contactForm"} name={"contact"} onSubmit={this.formSubmit}>
             <table id={"contactTable"}>                
                 <tr>
                     <td>
-                        <FormInput type={"text"} id={"contactName"} name={"name"} placeholder={"Name"} minLength={2} maxLength={100} value={name} onChange={this.handleChange}/>
+                        <FormInput type={"text"} id={"contactName"} name={"name"} placeholder={"Name"} minLength={2} maxLength={100}/>
                     </td>                                       
                 </tr>
                 <tr>
                     <td>
-                        <EmailFormInput id={"contactEmail"} name={"email"} placeholder={"Email"} minLength={2} maxLength={50} value={email} onChange={this.handleChange}/>                        
+                        <EmailFormInput id={"contactEmail"} name={"email"} placeholder={"Email"} minLength={2} maxLength={50}/>                        
                     </td> 
                 </tr>
                 <tr id={"trPhone"}>
@@ -33,7 +33,7 @@ export default class ContactForm extends React.Component
                 </tr>
                 <tr>
                     <td>
-                        <FormTextArea id={"contactMessage"} name={"message"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000} value={message} onChange={this.handleChange}/>
+                        <FormTextArea id={"contactMessage"} name={"message"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000}/>
                     </td>
                 </tr>
                 <tr>
@@ -44,6 +44,13 @@ export default class ContactForm extends React.Component
             </table>       
             <input type="hidden" name="form-name" value="contact"/>
         </form>);
+    }
+
+    /**
+     * @param {Event} e
+    */
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     componentDidMount()
@@ -99,9 +106,7 @@ export default class ContactForm extends React.Component
                 modal.getModal().open();
             }
         }        
-    }
-
-    handleChange = e => this.setState({ [e.target.name]: e.target.value });
+    }  
 
     /**
     * @param {HTMLElement} elem
