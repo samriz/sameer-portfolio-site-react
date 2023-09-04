@@ -58,7 +58,6 @@ export default class ContactForm extends React.Component
         document.getElementById("contactName").required = true;
         document.getElementById("contactEmail").required = true;
         document.getElementById("contactMessage").required = true;
-
         //document.getElementById("contactPhone").value = "0";
         document.getElementById("trPhone").hidden = true;
     }
@@ -96,7 +95,7 @@ export default class ContactForm extends React.Component
                     name.value = "";
                     email.value = "";
                     message.value = "";
-                    this.setState({name: "", email: "", message: ""});
+                    //this.setState({name: "", email: "", message: ""});
 
                     modal.setModalContent("Message sent!");
                 }
