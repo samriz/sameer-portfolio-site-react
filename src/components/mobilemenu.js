@@ -40,9 +40,12 @@ export default class MobileMenu extends React.Component
     {
         let hamburgerList = document.getElementById("hamburgerList");
         hamburgerList.hidden = true;
+
+        //add an event listener to the document and if something is clicked on the document and it is not the hamburger button then hide the hamburger list
         document.addEventListener("click", (e) => {
             const hamburgerButton = document.getElementById("hamburgerButton");
             let clickedElement = e.target;
+            //if the clicked element is not the hamburger button then hide the hamburger list
             if(clickedElement !== hamburgerButton) hamburgerList.hidden = true;
         });
     }
