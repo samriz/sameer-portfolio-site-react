@@ -59,13 +59,15 @@ export default class ContactForm extends React.Component
     formSubmit = async (e) => 
     {
         e.preventDefault();
-        let name = document.getElementById("contactName");
-        let email = document.getElementById("contactEmail");
-        let message = document.getElementById("contactMessage");
+        let nameInput = document.getElementById("contactName");
+        let emailInput = document.getElementById("contactEmail");
+        let messageInput = document.getElementById("contactMessage");
+
+        this.setState({name: nameInput.value, email: emailInput.value, message: messageInput.value});
 
         if(document.getElementById("contactPhone").value.length === 0)
         {
-            if(this.isValid(name, 100) && this.isValidEmail(email.value) && this.isValid(message, 1000))
+            if(this.isValid(nameInput, 100) && this.isValidEmail(this.state.email) && this.isValid(messageInput, 1000))
             {
                 let form = document.getElementById("contactForm");
                 let formData = new FormData(form);
@@ -83,10 +85,10 @@ export default class ContactForm extends React.Component
                 let modal = new jQueryConfirm();
                 if(response.ok) 
                 {
-                    name.value = "";
-                    email.value = "";
-                    message.value = "";
-                    //this.setState({name: "", email: "", message: ""});
+                    nameInput.value = "";
+                    emailInput.value = "";
+                    messageInput.value = "";
+                    this.setState({name: "", email: "", message: ""});
 
                     modal.setModalContent("Message sent!");
                 }
