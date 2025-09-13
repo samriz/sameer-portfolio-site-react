@@ -1,7 +1,7 @@
 import React from 'react';
 import PageTemplate from "./pagetemplate";
 import LinkedInPicture from "./misc/LinkedInPicture1.png";
-import Resume from "./misc/SameerRizviResume.pdf";
+import Resume from "./misc/SameerRizviResume2025.pdf";
 import { DownloadButton } from './components/buttons';
 import { ExternalUrlArrow } from './components/icons';
 import { HashLink } from 'react-router-hash-link';

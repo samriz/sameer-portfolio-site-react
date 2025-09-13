@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import PageTemplate from "./pagetemplate";
-import Resume from "./misc/2025Resume-SameerRizvi.pdf";
+import Resume from "./misc/SameerRizviResume2025.pdf";
 import { ExternalUrlArrow } from './components/icons';
 
 export default class Home extends React.Component
