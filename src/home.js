@@ -41,6 +41,6 @@ export default class Home extends React.Component
     {
         let summary = document.getElementById("summaryProfessionalSamples");
         let details = document.getElementById("samples");
-        if(details.hasAttribute("open") === false) summary.click();
+        if(!details.hasAttribute("open")) summary.click();
     }
 }
