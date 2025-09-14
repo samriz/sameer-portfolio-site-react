@@ -8,7 +8,7 @@ export default class SocialMediaBanner extends React.Component
     {
         return (
             <div>
-                <a href="https://www.linkedin.com/in/sameer-rizvi-bb788375" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/sameer-r-bb788375/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                 <LinkedInIcon/>
                 </a>
                 &nbsp;
