@@ -30,9 +30,9 @@ export default class Home extends React.Component
                 </li>
                 <li>My <a href={"https://github.com/samriz"} target={"_blank"} title={"GitHub"} rel={"noopener noreferrer"}>GitHub page <ExternalUrlArrow/></a>.</li>
                 <li>A way to <HashLink smooth to={"/#contactMain"} title={"Contact"} rel={"author"}>contact</HashLink> me.</li>
-                <li>
+                {/* <li>
                     <HashLink smooth to={"/#summaryProfessionalSamples"} onClick={this.openProfessionalSamples}>Links</HashLink> to some of my professional work.
-                </li>
+                </li> */}
             </ul>
         </div>);
     }

@@ -240,7 +240,7 @@ export default class About extends React.Component
                         </table>
                     </details>
 
-                    <details id={"samples"}>
+                    {/* <details id={"samples"}>
                         <summary id={"summaryProfessionalSamples"}>Links to some of my professional work</summary>
                             <table>                            
                                 <thead>
@@ -314,7 +314,7 @@ export default class About extends React.Component
                                 </tr>
                                 </tbody>
                             </table>      
-                    </details>
+                    </details> */}
                 </div>
                 <br></br>
                 <div style={{textAlign: "center",}}>
