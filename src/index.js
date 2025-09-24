@@ -57,7 +57,7 @@ export class App extends React.Component
                 <Routes>
                     <Route index element={<Index/>}/>
                 </Routes>
-          </BrowserRouter>
+            </BrowserRouter>
         );
     }
 }
