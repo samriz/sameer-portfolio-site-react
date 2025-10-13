@@ -1,6 +1,7 @@
 import React from 'react';
 import jQueryConfirm from "./modal";
-import {FormInput, EmailFormInput, FormTextArea} from "./forminputs";
+import {FormInput} from "./forminputs";
+import {EmailRegex} from "../constants/regex";
 
 export default class ContactForm extends React.Component
 {  
@@ -17,27 +18,27 @@ export default class ContactForm extends React.Component
             <table id={"contactTable"}>                
                 <tr>
                     <td>
-                        <FormInput type={"text"} id={"contactName"} name={"name"} placeholder={"Name"} minLength={2} maxLength={100}/>
+                        <FormInput type="text" id="contactName" name="name" placeholder="Name" minLength={2} maxLength={100}/>
                     </td>                                       
                 </tr>
                 <tr>
                     <td>
-                        <EmailFormInput id={"contactEmail"} name={"email"} placeholder={"Email"} minLength={2} maxLength={50}/>                        
+                        <FormInput type="email" id="contactEmail" name="email" placeholder="Email" minLength={2} maxLength={50}/>
                     </td> 
                 </tr>
                 <tr id={"trPhone"}>
                     <td>
-                        <input type={"tel"} id={"contactPhone"} name={"phone"} placeholder={"Phone"} className={"form-control"}/>
+                        <input type="tel" id="contactPhone" name="phone" placeholder="Phone" className="form-control"/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <FormTextArea id={"contactMessage"} name={"message"} placeholder={"Message"} className={"form-control"} rows={5} cols={50} minLength={2} maxLength={1000}/>
+                        <FormInput type="textarea" id="contactMessage" name="message" placeholder="Message" className="form-control" rows={5} cols={50} minLength={2} maxLength={1000}/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <button type={"submit"} className={"btn btn-outline-secondary"}>Send</button>
+                        <button type="submit" className="btn btn-outline-secondary">Send</button>
                     </td>
                 </tr>                             
             </table>       
@@ -120,19 +121,22 @@ export default class ContactForm extends React.Component
     isValidEmail = (email) =>
     {            
         let validEmail = false;
-        let indexOfAt = 0;
-        let indexOfDot = 0;
+        //let indexOfAt = 0;
+        //let indexOfDot = 0;
 
         if(typeof email === "string")
         {
-            if(email.includes('@')) indexOfAt = email.search('@');
+            /* if(email.includes('@')) indexOfAt = email.search('@');
             if(email.includes('.')) indexOfDot = email.indexOf('.');
-            if(indexOfDot > indexOfAt + 1) validEmail = true;
+            if(indexOfDot > indexOfAt + 1) validEmail = true; */
+            validEmail = EmailRegex.test(email);
+            console.log("Valid email: " + validEmail);
         }
 
         let span = document.getElementById("spanInvalidEmail");
-        if(validEmail === false) span.hidden = false;
-        else span.hidden = true;
+        //if(validEmail === false) span.hidden = false;
+        //else span.hidden = true;        
+        span.hidden = validEmail;
 
         return validEmail;
     }
