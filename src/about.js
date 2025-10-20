@@ -20,7 +20,7 @@ export default class About extends React.Component
                         <figcaption>
                             <HashLink smooth to="/#contact" className="textlink" title="Contact">Contact me</HashLink>
                             <br></br>
-                            <a href={"https://www.linkedin.com/in/sameer-r-bb788375/"} target={"_blank"}>LinkedIn <ExternalUrlArrow/></a>
+                            <a href={"https://www.linkedin.com/in/sameer-r-bb788375/"} target={"_blank"} rel="noreferrer">LinkedIn <ExternalUrlArrow/></a>
                         </figcaption>
                     </figure>
                 </>
